@@ -6,8 +6,8 @@ final ThemeData lightTheme = ThemeData(
   textTheme: GoogleFonts.latoTextTheme(),
   colorScheme: const ColorScheme.light(
     primary: Color.fromARGB(255, 250, 250, 250), // Text color
-    secondary:
-        Color.fromARGB(255, 10, 10, 10), // Background color // Accent color
+    secondary: Color.fromARGB(255, 10, 10, 10), // Background color // Accent color
     shadow: Color.fromARGB(255, 141, 141, 141),
+    tertiary: Color.fromARGB(255, 6, 174, 204),
   ),
 );

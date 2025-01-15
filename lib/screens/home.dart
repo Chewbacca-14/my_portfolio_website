@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/screens/about.dart';
 import 'package:my_portfolio_website/utils/widgets/menu_tab.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -38,12 +39,32 @@ class HomeScreen extends StatelessWidget {
                       MenuTab('Skills'),
                     ],
                   ),
-                ]
+                ],
               ],
             ),
           ),
         ),
         backgroundColor: Colors.transparent,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 800,
+            ),
+            child: const Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 110),
+                  AboutScreen(),
+                ],
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
