@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/providers/nav_provider.dart';
 import 'package:my_portfolio_website/providers/theme_provider.dart';
 import 'package:my_portfolio_website/screens/home.dart';
 import 'package:my_portfolio_website/theme/dark_theme.dart';
@@ -7,8 +8,11 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeNotifier(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => NavProvider()),
+        ChangeNotifierProvider(create: (context) => ThemeNotifier()),
+      ],
       child: const MainApp(),
     ),
   );
