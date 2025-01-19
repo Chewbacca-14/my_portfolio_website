@@ -2,6 +2,12 @@ part of 'projects.dart';
 
 List<Project> _myProjects = [
   Project(
+    name: 'THIS PORTFOLIO',
+    badges: ['Portfolio', 'Flutter', 'Dart'],
+    url: 'https://github.com/Chewbacca-14/my_portfolio_website',
+    description: 'I created this portfolio to showcase my skills and projects. It is a Flutter web application.',
+  ),
+  Project(
     name: 'Maru',
     badges: ['Commercial App', 'Flutter', 'Dart', 'Decentralized network'],
     url: null,

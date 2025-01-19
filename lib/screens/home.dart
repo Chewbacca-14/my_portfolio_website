@@ -91,97 +91,148 @@ class HomeScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Column(
+                      spacing: 50,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const SizedBox(height: 110),
                         const AboutScreen(),
-                        const SizedBox(height: 50),
-                        ExperienceScreen(
-                          key: navProvider.experience,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Experience',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: ExperienceScreen(
+                                key: navProvider.experience,
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 50),
-                        ProjectsScreen(
-                          key: navProvider.projects,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Projects I can share',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: ProjectsScreen(
+                                key: navProvider.projects,
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 50),
-                        Center(
-                          child: SkillsScreen(
-                            key: navProvider.skills,
-                          ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Skills',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20),
+                              child: Center(
+                                child: SkillsScreen(
+                                  key: navProvider.skills,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(top: 90, bottom: 20),
+                          padding: const EdgeInsets.only(top: 90),
                           child: Center(
                             child: Wrap(
                               alignment: WrapAlignment.center,
                               crossAxisAlignment: WrapCrossAlignment.center,
                               children: [
                                 Text(
-                                  'Maxim Bulanovich | Flutter Developer',
+                                  'Made with Flutter ❤️ \nby Maxim Bulanovich | Flutter Developer',
                                   style: TextStyle(
                                     color: Theme.of(context).colorScheme.shadow,
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700,
                                   ),
-                                ),
-                                const SizedBox(width: 10),
-                                Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    IconButton(
-                                      tooltip: 'Open My LinkedIn',
-                                      onPressed: () {
-                                        html.window.open('https://www.linkedin.com/in/max-bulanovich-702642260', '_blank');
-                                      },
-                                      icon: Image.asset(
-                                        'assets/icons/linkedin.png',
-                                        color: Theme.of(context).colorScheme.primary,
-                                        width: 18,
-                                        height: 18,
-                                      ),
-                                    ),
-                                    IconButton(
-                                      tooltip: 'Open My GitHub',
-                                      onPressed: () {
-                                        html.window.open('https://github.com/Chewbacca-14', '_blank');
-                                      },
-                                      icon: Image.asset(
-                                        'assets/icons/github.png',
-                                        color: Theme.of(context).colorScheme.primary,
-                                        width: 18,
-                                        height: 18,
-                                      ),
-                                    ),
-                                    IconButton(
-                                      tooltip: 'Message me on Telegram',
-                                      onPressed: () {
-                                        html.window.open('https://t.me/chwbcc_max', '_blank');
-                                      },
-                                      icon: Image.asset(
-                                        'assets/icons/telegram.png',
-                                        color: Theme.of(context).colorScheme.primary,
-                                        width: 18,
-                                        height: 18,
-                                      ),
-                                    ),
-                                    IconButton(
-                                      tooltip: 'Follow me on Instagram',
-                                      onPressed: () {
-                                        html.window.open('https://www.instagram.com/chwbcc_max/', '_blank');
-                                      },
-                                      icon: Image.asset(
-                                        'assets/icons/instagram.png',
-                                        color: Theme.of(context).colorScheme.primary,
-                                        width: 18,
-                                        height: 18,
-                                      ),
-                                    ),
-                                  ],
+                                  textAlign: TextAlign.center,
                                 ),
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: Center(
+                            child: Wrap(
+                              alignment: WrapAlignment.center,
+                              children: [
+                                IconButton(
+                                  tooltip: 'Open My LinkedIn',
+                                  onPressed: () {
+                                    html.window.open('https://www.linkedin.com/in/max-bulanovich-702642260', '_blank');
+                                  },
+                                  icon: Image.asset(
+                                    'assets/icons/linkedin.png',
+                                    color: Theme.of(context).colorScheme.primary,
+                                    width: 18,
+                                    height: 18,
+                                  ),
+                                ),
+                                IconButton(
+                                  tooltip: 'Open My GitHub',
+                                  onPressed: () {
+                                    html.window.open('https://github.com/Chewbacca-14', '_blank');
+                                  },
+                                  icon: Image.asset(
+                                    'assets/icons/github.png',
+                                    color: Theme.of(context).colorScheme.primary,
+                                    width: 18,
+                                    height: 18,
+                                  ),
+                                ),
+                                IconButton(
+                                  tooltip: 'Message me on Telegram',
+                                  onPressed: () {
+                                    html.window.open('https://t.me/chwbcc_max', '_blank');
+                                  },
+                                  icon: Image.asset(
+                                    'assets/icons/telegram.png',
+                                    color: Theme.of(context).colorScheme.primary,
+                                    width: 18,
+                                    height: 18,
+                                  ),
+                                ),
+                                IconButton(
+                                  tooltip: 'Follow me on Instagram',
+                                  onPressed: () {
+                                    html.window.open('https://www.instagram.com/chwbcc_max/', '_blank');
+                                  },
+                                  icon: Image.asset(
+                                    'assets/icons/instagram.png',
+                                    color: Theme.of(context).colorScheme.primary,
+                                    width: 18,
+                                    height: 18,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
