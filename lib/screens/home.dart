@@ -94,12 +94,13 @@ class HomeScreen extends StatelessWidget {
                       spacing: 50,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 110),
+                        SizedBox(height: screenWidth > 600 ? 110 : 50),
                         const AboutScreen(),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
+                              key: navProvider.experience,
                               'Experience',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
@@ -107,11 +108,9 @@ class HomeScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: ExperienceScreen(
-                                key: navProvider.experience,
-                              ),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 20),
+                              child: ExperienceScreen(),
                             ),
                           ],
                         ),
@@ -119,6 +118,7 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
+                              key: navProvider.projects,
                               'Projects I can share',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
@@ -126,11 +126,9 @@ class HomeScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
-                              child: ProjectsScreen(
-                                key: navProvider.projects,
-                              ),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 20),
+                              child: ProjectsScreen(),
                             ),
                           ],
                         ),
@@ -138,6 +136,7 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
+                              key: navProvider.skills,
                               'Skills',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
@@ -145,12 +144,10 @@ class HomeScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 20),
                               child: Center(
-                                child: SkillsScreen(
-                                  key: navProvider.skills,
-                                ),
+                                child: SkillsScreen(),
                               ),
                             ),
                           ],

@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/utils/widgets/square_button.dart';
+import 'package:my_portfolio_website/utils/widgets/statistics/stats_value_container.dart';
 import 'dart:html' as html;
 
 class AboutScreen extends StatelessWidget {
@@ -52,7 +53,7 @@ class AboutScreen extends StatelessWidget {
         ),
         const SizedBox(height: 12),
         Text(
-          'Flutter Developer | Crafting Engaging and High-Performance Mobile Applications | 2+ Years of Experience in Building Interactive User Experiences | Eager to Learn, Adapt, and Drive Innovation',
+          'Flutter Developer | Crafting Engaging and High-Performance Mobile Applications | Eager to Learn, Adapt, and Drive Innovation',
           style: TextStyle(
             fontSize: 15,
             color: Theme.of(context).colorScheme.shadow,
@@ -115,7 +116,24 @@ class AboutScreen extends StatelessWidget {
               },
             ),
           ],
-        )
+        ),
+        const SizedBox(height: 30),
+        const StatsValueContainer(
+          2,
+          suffix: '+ years of experience',
+        ),
+        const StatsValueContainer(
+          1700,
+          suffix: ' + hours of coding',
+        ),
+        const StatsValueContainer(
+          700,
+          suffix: '+ coups of tea',
+        ),
+        const StatsValueContainer(
+          15,
+          suffix: '+ commercial projects',
+        ),
       ],
     );
   }

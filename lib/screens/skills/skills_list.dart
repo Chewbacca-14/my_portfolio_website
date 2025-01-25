@@ -21,5 +21,6 @@ List<String> _mySkills = [
   'Localizations',
   'Google Play publishing',
   'App Store publishing',
+  'Exporting to PDF/Excel/CSV',
   'more...',
 ];

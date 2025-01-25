@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/models/project.dart';
 import 'package:my_portfolio_website/utils/widgets/projects/project_badge.dart';
 import 'package:my_portfolio_website/utils/widgets/square_button.dart';
+import 'package:my_portfolio_website/utils/widgets/statistics/stats_value_container.dart';
 import 'dart:html' as html;
 
 class ProjectCard extends StatefulWidget {

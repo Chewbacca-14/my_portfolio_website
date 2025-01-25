@@ -26,6 +26,7 @@ class MainApp extends StatelessWidget {
     return Consumer<ThemeNotifier>(
       builder: (context, notifier, child) => MaterialApp(
         theme: lightTheme,
+        title: 'Maxim Bulanovich',
         darkTheme: darkTheme,
         themeMode: notifier.themeMode,
         home: const HomeScreen(),

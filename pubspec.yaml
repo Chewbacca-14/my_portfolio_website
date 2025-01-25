@@ -1,5 +1,5 @@
 name: my_portfolio_website
-description: "A new Flutter project."
+description: "Personal portfolio website"
 publish_to: "none"
 version: 0.1.0
 
@@ -13,6 +13,7 @@ dependencies:
   provider: ^6.1.2
   google_fonts: ^6.2.1
   animated_text_kit: ^4.2.2
+  animated_text_lerp: ^2.0.0
 
 dev_dependencies:
   flutter_test:
