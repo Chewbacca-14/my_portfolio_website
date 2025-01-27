@@ -25,3 +25,4 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/null_end_browser/

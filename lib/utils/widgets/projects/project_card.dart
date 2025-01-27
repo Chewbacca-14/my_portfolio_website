@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/models/project.dart';
 import 'package:my_portfolio_website/utils/widgets/projects/project_badge.dart';
 import 'package:my_portfolio_website/utils/widgets/square_button.dart';
-import 'package:my_portfolio_website/utils/widgets/statistics/stats_value_container.dart';
 import 'dart:html' as html;
 
 class ProjectCard extends StatefulWidget {
   final Project project;
+  final void Function()? onTap;
+
   const ProjectCard({
     super.key,
     required this.project,
+    required this.onTap,
   });
 
   @override
@@ -42,69 +44,72 @@ class _ProjectCardState extends State<ProjectCard> {
       onExit: (event) {
         onExit();
       },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 170),
-        decoration: BoxDecoration(
-          border: Border.all(color: isHover ? Theme.of(context).colorScheme.tertiary : Theme.of(context).colorScheme.shadow, width: isHover ? 0.6 : 0.35),
-          borderRadius: BorderRadius.circular(6),
-        ),
-        padding: EdgeInsets.all(16 * scale),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Wrap(
-                    crossAxisAlignment: WrapCrossAlignment.start,
-                    alignment: WrapAlignment.start,
-                    runSpacing: 4,
-                    spacing: 4,
-                    children: [
-                      Text(
-                        widget.project.name,
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                          fontSize: 21,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      ...widget.project.badges.map(
-                        (badge) => Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              ProjectBadge(badge),
-                            ],
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 170),
+          decoration: BoxDecoration(
+            border: Border.all(color: isHover ? Theme.of(context).colorScheme.tertiary : Theme.of(context).colorScheme.shadow, width: isHover ? 0.6 : 0.35),
+            borderRadius: BorderRadius.circular(6),
+          ),
+          padding: EdgeInsets.all(16 * scale),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.start,
+                      alignment: WrapAlignment.start,
+                      runSpacing: 4,
+                      spacing: 4,
+                      children: [
+                        Text(
+                          widget.project.name,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
+                        ...widget.project.badges.map(
+                          (badge) => Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                ProjectBadge(badge),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      widget.project.description,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.shadow,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    widget.project.description,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.shadow,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  if (widget.project.url != null) ...[
-                    SquareButton(
-                      tooltip: 'Open',
-                      imageUrl: 'assets/icons/url.png',
-                      onTap: () {
-                        html.window.open(widget.project.url!, '_blank');
-                      },
-                    ),
-                  ]
-                ],
+                    const SizedBox(height: 15),
+                    if (widget.project.url != null) ...[
+                      SquareButton(
+                        tooltip: 'Open',
+                        imageUrl: 'assets/icons/url.png',
+                        onTap: () {
+                          html.window.open(widget.project.url!, '_blank');
+                        },
+                      ),
+                    ]
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

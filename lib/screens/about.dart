@@ -117,7 +117,16 @@ class AboutScreen extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 50),
+        Text(
+          'Statistics',
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.primary,
+            fontSize: 32,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
+        const SizedBox(height: 20),
         const StatsValueContainer(
           2,
           suffix: '+ years of experience',
