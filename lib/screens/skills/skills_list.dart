@@ -8,7 +8,8 @@ List<String> _mySkills = [
   'sqflite',
   'Hive',
   'Shared preferences',
-  'BloC',
+  'Bloc',
+  'Cubit',
   'Provider',
   'GetX',
   'GetIt',
@@ -22,5 +23,6 @@ List<String> _mySkills = [
   'Google Play publishing',
   'App Store publishing',
   'Exporting to PDF/Excel/CSV',
+  'Local Notifications',
   'more...',
 ];

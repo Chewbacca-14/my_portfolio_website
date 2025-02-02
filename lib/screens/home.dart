@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/providers/nav_provider.dart';
 import 'package:my_portfolio_website/screens/about.dart';

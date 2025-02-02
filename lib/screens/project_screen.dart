@@ -2,80 +2,78 @@ import 'package:flutter/material.dart';
 
 class ProjectScreen extends StatelessWidget {
   final String projectName;
+  final List<String>? images;
 
   const ProjectScreen({
     super.key,
     required this.projectName,
+    required this.images,
   });
 
   @override
   Widget build(BuildContext context) {
-    int crossAxisCount = MediaQuery.of(context).size.width ~/ 250;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.secondary,
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         backgroundColor: Colors.transparent,
         centerTitle: true,
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              maxWidth: 900,
-            ),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                projectName,
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontSize: 22,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
+        title: Text(
+          projectName,
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.primary,
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start, // Aligns content at the top
-          crossAxisAlignment: CrossAxisAlignment.center, // Centers content horizontally
-          children: [
-            Flexible(
-              child: Align(
-                alignment: Alignment.topCenter,
-                child: GridView.builder(
-                  shrinkWrap: true, // Ensures GridView doesn't take unnecessary space
-                  padding: EdgeInsets.zero,
-                  itemCount: nullEndBrowserLinks.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 1 / 1.1,
-                    crossAxisCount: crossAxisCount,
-                    mainAxisExtent: 400,
-                  ),
-                  itemBuilder: (context, index) {
-                    return Image.asset(
-                      nullEndBrowserLinks[index],
-                      fit: BoxFit.contain,
-                    );
-                  },
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            vertical: 50,
+            horizontal: 20,
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Wrap(
+                  spacing: 20,
+                  runSpacing: 20,
+                  children: [
+                    ...images!.map(
+                      (link) => Container(
+                        width: 280,
+                        height: 600,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(
+                            color: Theme.of(context).colorScheme.primary,
+                            width: 0.5,
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage(link),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
   }
 }
-
-List<String> nullEndBrowserLinks = [
-  'assets/null_end_browser/null_end_browser_1.png',
-  'assets/null_end_browser/null_end_browser_2.png',
-  'assets/null_end_browser/null_end_browser_3.png',
-  'assets/null_end_browser/null_end_browser_4.png',
-  // 'assets/null_end_browser/null_end_browser_5.png',
-  'assets/null_end_browser/null_end_browser_6.png',
-  'assets/null_end_browser/null_end_browser_7.png',
-  'assets/null_end_browser/null_end_browser_8.png',
-];
