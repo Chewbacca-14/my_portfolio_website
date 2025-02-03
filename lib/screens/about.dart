@@ -4,8 +4,20 @@ import 'package:my_portfolio_website/utils/widgets/square_button.dart';
 import 'package:my_portfolio_website/utils/widgets/statistics/stats_value_container.dart';
 import 'dart:html' as html;
 
-class AboutScreen extends StatelessWidget {
+class AboutScreen extends StatefulWidget {
   const AboutScreen({super.key});
+
+  @override
+  State<AboutScreen> createState() => _AboutScreenState();
+}
+
+class _AboutScreenState extends State<AboutScreen> {
+  int get daysDifference {
+    final DateTime from = DateTime(2025, 2, 3);
+    final DateTime today = DateTime.now();
+    final int difference = today.difference(from).inDays;
+    return difference;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,17 +43,13 @@ class AboutScreen extends StatelessWidget {
             ),
           ],
         ),
-        AnimatedTextKit(
-          animatedTexts: [
-            TyperAnimatedText(
-              'Maxim Bulanovich',
-              textStyle: TextStyle(
-                fontSize: 55,
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ],
+        Text(
+          'Maxim Bulanovich',
+          style: TextStyle(
+            fontSize: 55,
+            color: Theme.of(context).colorScheme.primary,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         Text(
           'Flutter Developer',
@@ -131,12 +139,12 @@ class AboutScreen extends StatelessWidget {
           2,
           suffix: '+ years of experience',
         ),
-        const StatsValueContainer(
-          1700,
+        StatsValueContainer(
+          ((1700) + (daysDifference * 5.85)).toInt(),
           suffix: ' + hours of coding',
         ),
-        const StatsValueContainer(
-          700,
+        StatsValueContainer(
+          ((700) + (daysDifference * 1)).toInt(),
           suffix: '+ coups of tea',
         ),
         const StatsValueContainer(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ProjectScreen extends StatelessWidget {
@@ -60,9 +61,18 @@ class ProjectScreen extends StatelessWidget {
                             color: Theme.of(context).colorScheme.primary,
                             width: 0.5,
                           ),
-                          image: DecorationImage(
-                            image: AssetImage(link),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: CachedNetworkImage(
+                            imageUrl: link, // Your network image URL
                             fit: BoxFit.cover,
+                            placeholder: (context, url) => const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                            errorWidget: (context, url, error) => const Center(
+                              child: Icon(Icons.error, color: Colors.red),
+                            ),
                           ),
                         ),
                       ),
