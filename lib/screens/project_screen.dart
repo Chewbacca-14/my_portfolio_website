@@ -70,8 +70,14 @@ class ProjectScreen extends StatelessWidget {
                             placeholder: (context, url) => const Center(
                               child: CircularProgressIndicator(),
                             ),
-                            errorWidget: (context, url, error) => const Center(
-                              child: Icon(Icons.error, color: Colors.red),
+                            errorWidget: (context, url, error) => Center(
+                              child: Tooltip(
+                                message: 'Failed to load image $error',
+                                child: const Icon(
+                                  Icons.error,
+                                  color: Colors.red,
+                                ),
+                              ),
                             ),
                           ),
                         ),
