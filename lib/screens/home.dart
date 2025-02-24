@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/providers/nav_provider.dart';
 import 'package:my_portfolio_website/screens/about.dart';
+import 'package:my_portfolio_website/screens/blog/blog.dart';
 import 'package:my_portfolio_website/screens/experience/experience.dart';
 import 'package:my_portfolio_website/screens/footer/footer.dart';
 import 'package:my_portfolio_website/screens/projects/projects.dart';
@@ -65,6 +66,12 @@ class HomeScreen extends StatelessWidget {
                         'Skills',
                         onTap: () {
                           navProvider.scrollTo(NavItems.skills);
+                        },
+                      ),
+                      MenuTab(
+                        'Blog',
+                        onTap: () {
+                          navProvider.scrollTo(NavItems.blog);
                         },
                       ),
                     ],
@@ -147,6 +154,26 @@ class HomeScreen extends StatelessWidget {
                               padding: EdgeInsets.only(top: 20),
                               child: Center(
                                 child: SkillsScreen(),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              key: navProvider.blog,
+                              'Blog',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
+                                fontSize: 32,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.only(top: 20),
+                              child: Center(
+                                child: BlogScreen(),
                               ),
                             ),
                           ],

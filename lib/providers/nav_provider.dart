@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-enum NavItems { home, experience, projects, skills }
+enum NavItems { home, experience, projects, skills, blog }
 
 class NavProvider extends ChangeNotifier {
   final ScrollController scrollController = ScrollController();
 
-  GlobalKey experience = GlobalKey();
-  GlobalKey projects = GlobalKey();
-  GlobalKey skills = GlobalKey();
+  final experience = GlobalKey();
+  final projects = GlobalKey();
+  final skills = GlobalKey();
+  final blog = GlobalKey();
 
   void scrollTo(NavItems item) {
     if (item == NavItems.home) {
@@ -38,6 +39,8 @@ class NavProvider extends ChangeNotifier {
         return projects.currentContext;
       case NavItems.skills:
         return skills.currentContext;
+      case NavItems.blog:
+        return blog.currentContext;
       default:
         return null;
     }
