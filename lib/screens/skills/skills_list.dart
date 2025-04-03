@@ -24,5 +24,8 @@ List<String> _mySkills = [
   'App Store publishing',
   'Exporting to PDF/Excel/CSV',
   'Local Notifications',
+  'Audio',
+  'Video',
+  'Photo',
   'more...',
 ];

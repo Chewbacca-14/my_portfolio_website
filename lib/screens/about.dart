@@ -27,7 +27,7 @@ class _AboutScreenState extends State<AboutScreen> {
         const CircleAvatar(
           radius: 80,
           backgroundImage: NetworkImage(
-            'https://media.licdn.com/dms/image/v2/D4E03AQFxAjdx65J4NQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720036174465?e=1742428800&v=beta&t=ILE2RKgw2ztaFNRHk0hcW5Ly-tOHBmNC9bXILIxB5Dw',
+            'https://media.licdn.com/dms/image/v2/D4E03AQFxAjdx65J4NQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720036174465?e=1749081600&v=beta&t=JaB6TH6n3Gz6_MnRAqWPL9OsSX7XQoeGClWKpA5FlQE',
           ),
         ),
         const SizedBox(height: 16),
@@ -99,7 +99,9 @@ class _AboutScreenState extends State<AboutScreen> {
               imageUrl: 'assets/icons/linkedin.png',
               tooltip: 'Open My LinkedIn',
               onTap: () {
-                html.window.open('https://www.linkedin.com/in/max-bulanovich-702642260', '_blank');
+                html.window.open(
+                    'https://www.linkedin.com/in/max-bulanovich-702642260',
+                    '_blank');
               },
             ),
             SquareButton(
@@ -120,7 +122,8 @@ class _AboutScreenState extends State<AboutScreen> {
               tooltip: 'Follow me on Instagram',
               imageUrl: 'assets/icons/instagram.png',
               onTap: () {
-                html.window.open('https://www.instagram.com/chwbcc_max/', '_blank');
+                html.window
+                    .open('https://www.instagram.com/chwbcc_max/', '_blank');
               },
             ),
           ],
@@ -136,15 +139,15 @@ class _AboutScreenState extends State<AboutScreen> {
         ),
         const SizedBox(height: 20),
         const StatsValueContainer(
-          2,
+          2.5,
           suffix: '+ years of experience',
         ),
         StatsValueContainer(
-          ((1700) + (daysDifference * 5.85)).toInt(),
+          ((1700) + (daysDifference * 5.85)).roundToDouble(),
           suffix: ' + hours of coding',
         ),
         StatsValueContainer(
-          ((700) + (daysDifference * 1)).toInt(),
+          ((700) + (daysDifference * 1)).roundToDouble(),
           suffix: '+ coups of tea',
         ),
         const StatsValueContainer(
