@@ -7,27 +7,20 @@ on:
 
 jobs:
   build:
+    name: build
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: Install Flutter
-        uses: subosito/flutter-action@v2
+      # You can install flutter prior to using this action. This action won't install flutter then.
+
+      - uses: cedvdb/action-flutter-build-web@v1
         with:
-          flutter-version: "3.29.0"
+          build-cmd: flutter build web --release
+          working-directory: ./
 
-      - name: Enable Flutter Web
-        run: flutter config --enable-web
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build web
-        run: flutter build web --release
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Archive Production artifact
+        uses: actions/upload-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
+          name: release
+          path: build/web
