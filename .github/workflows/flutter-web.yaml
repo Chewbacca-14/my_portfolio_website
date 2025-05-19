@@ -1,26 +1,42 @@
-name: Maxim Bulanovich
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
-jobs:
-  build:
-    name: build
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Deploy to the github-pages environment
+
+
+jobs:  
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v2
-
-      # You can install flutter prior to using this action. This action won't install flutter then.
-
-      - uses: cedvdb/action-flutter-build-web@v1
+      - uses: actions/checkout@v3
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
         with:
-          build-cmd: flutter build web --release
-          working-directory: ./
+          channel: stable
+      - name: Install dependencies
+        run: flutter pub get
+        working-directory: ${{env.working-directory}}
+      - name: Build web app
+        run: flutter build web
+        working-directory: ${{env.working-directory}}
 
-      - name: Archive Production artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: release
-          path: build/web
+          path: build/web/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
