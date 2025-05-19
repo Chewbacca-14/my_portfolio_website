@@ -1,35 +1,28 @@
-name: Deploy Web to GitHub
+name: Deploy Flutter Web App
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches:
+      - main
 
 jobs:
-  build_number:
-    runs-on: ubuntu-latest
-    outputs:
-      buildnumber: ${{ steps.buildnumber.outputs.build_number }}
-    steps:
-      - name: Generate Build Number
-        id: buildnumber
-        uses: einaregilsson/build-number@v3
-        with:
-          token: ${{secrets.GITHUB_TOKEN}}
-      - name: Build Number
-        run: echo "Build Number - $BUILD_NUMBER"
-
-  publish:
-    needs: build_number
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
-      - name: Publish
-        uses: peiffer-innovations/actions-flutter-deploy-pages@v1
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
         with:
-          build_number: ${{ needs.build_number.outputs.buildnumber }}
-          deploy_path: web
-          repo_url: https://github.com/${{ github.repository }}
-          source_path: example
-          token: ${{ secrets.GITHUB_TOKEN }}
+          flutter-version: "stable"
+
+      - name: Build Web
+        run: flutter build web
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/web
