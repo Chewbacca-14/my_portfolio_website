@@ -1,50 +1,35 @@
-name: Deploy to GitHub Pages
+name: Deploy Web to GitHub
 
 on:
-  push:
+  pull_request:
     branches: [main]
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-  actions: read     # required to download artifacts with v4 actions
-
-# Allow only one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
 jobs:
-  build-and-deploy:
+  build_number:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{{{ steps.deployment.outputs.page_url }}}}
+    outputs:
+      buildnumber: ${{ steps.buildnumber.outputs.build_number }}
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
+      - name: Generate Build Number
+        id: buildnumber
+        uses: einaregilsson/build-number@v3
         with:
-          channel: stable
+          token: ${{secrets.GITHUB_TOKEN}}
+      - name: Build Number
+        run: echo "Build Number - $BUILD_NUMBER"
 
-      - name: Install dependencies
-        run: flutter pub get
+  publish:
+    needs: build_number
+    runs-on: ubuntu-latest
 
-      - name: Build web app
-        run: flutter build web --release
-
-      # Configure GitHub Pages
-      - uses: actions/configure-pages@v5
-
-      # Upload the generated site
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Publish
+        uses: peiffer-innovations/actions-flutter-deploy-pages@v1
         with:
-          path: build/web
-
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          build_number: ${{ needs.build_number.outputs.buildnumber }}
+          deploy_path: web
+          repo_url: https://github.com/${{ github.repository }}
+          source_path: example
+          token: ${{ secrets.GITHUB_TOKEN }}
