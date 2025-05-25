@@ -44,7 +44,7 @@ class _AboutScreenState extends State<AboutScreen> {
           ],
         ),
         Text(
-          'Maxim Bulanovich',
+          'Maxim Bulanovich ...',
           style: TextStyle(
             fontSize: 55,
             color: Theme.of(context).colorScheme.primary,
@@ -99,9 +99,7 @@ class _AboutScreenState extends State<AboutScreen> {
               imageUrl: 'assets/icons/linkedin.png',
               tooltip: 'Open My LinkedIn',
               onTap: () {
-                html.window.open(
-                    'https://www.linkedin.com/in/max-bulanovich-702642260',
-                    '_blank');
+                html.window.open('https://www.linkedin.com/in/max-bulanovich-702642260', '_blank');
               },
             ),
             SquareButton(
@@ -122,8 +120,7 @@ class _AboutScreenState extends State<AboutScreen> {
               tooltip: 'Follow me on Instagram',
               imageUrl: 'assets/icons/instagram.png',
               onTap: () {
-                html.window
-                    .open('https://www.instagram.com/chwbcc_max/', '_blank');
+                html.window.open('https://www.instagram.com/chwbcc_max/', '_blank');
               },
             ),
           ],
