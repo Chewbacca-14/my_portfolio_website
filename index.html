@@ -14,7 +14,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
-        <!-- <base href="$FLUTTER_BASE_HREF"> -->
+        <base href="/">
         <meta charset="UTF-8">
         <meta content="IE=Edge" http-equiv="X-UA-Compatible">
         <meta name="description" content="Personal portfolio website">
@@ -24,11 +24,93 @@
         <meta name="apple-mobile-web-app-title" content="Maxim Bulanovich">
         <link rel="apple-touch-icon" href="icons/Icon-192.png">
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="favicon.png">
-        <title>Maxim Bulanovich</title>
+        <link rel="icon" type="image/png" href="url.png">
+        <title>Maksim Bulanovich.</title>
         <link rel="manifest" href="manifest.json">
+        <style id="splash-screen-style">
+    html {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      background-color: #000000;
+          background-size: 100% 100%;
+    }
+
+
+
+    .contain {
+      display:block;
+      width:100%; height:100%;
+      object-fit: contain;
+    }
+
+    .stretch {
+      display:block;
+      width:100%; height:100%;
+    }
+
+    .cover {
+      display:block;
+      width:100%; height:100%;
+      object-fit: cover;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+
+    .bottomLeft {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .bottomRight {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+   #splash {
+  position: relative;
+  text-align: center;
+  background-color: #000000;
+  height: 100vh;
+  padding-top: 40vh; /* centers content vertically approximately */
+}
+
+.center {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  color: white;
+  margin-top: 10px;
+  font-size: 24px;
+}
+        </style>
+        <script id="splash-screen-script">
+    function removeSplashFromWeb() {
+      document.getElementById("splash")?.remove();
+      document.getElementById("splash-branding")?.remove();
+      document.body.style.background = "transparent";
+    }
+        </script>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
     </head>
     <body>
-        <script src="flutter_bootstrap.js" async></script>
+        <div id="splash" style="position: relative; text-align: center; background-color: #000000; height: 100vh;">
+            <picture></picture>
+            <h1 style="color: white; margin-top: 10px; font-size: 18px;">🐹 Warming up the hamsters...</h1>
+            <h1 style="color: white; margin-top: 2px; font-size: 18px;">Almost done!</h1>
+        </div>
+        <script src="flutter_bootstrap.js" async=""></script>
     </body>
 </html>
