@@ -21,9 +21,13 @@ class NavProvider extends ChangeNotifier {
       final keyContext = _keyContext(item);
       if (keyContext != null) {
         final RenderBox renderBox = keyContext.findRenderObject() as RenderBox;
-        final position = renderBox.localToGlobal(Offset.zero);
+        final scrollableBox = scrollController.position.context.storageContext.findRenderObject() as RenderBox;
+
+        final offset = renderBox.localToGlobal(Offset.zero, ancestor: scrollableBox);
+        final dy = scrollController.offset + offset.dy;
+
         scrollController.animateTo(
-          position.dy,
+          dy - 30,
           duration: const Duration(seconds: 1),
           curve: Curves.easeInOut,
         );

@@ -15,6 +15,7 @@ dependencies:
   animated_text_lerp: ^2.0.0
   cached_network_image: ^3.4.1
   intl: ^0.20.2
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_test:
@@ -35,3 +36,9 @@ flutter:
     - assets/papi_burgers/
     - assets/taxi_app/
     - assets/blog/
+    - assets/avatar.png
+
+flutter_native_splash:
+  color: "#000000" # Set splash screen background color (black)
+  image: assets/avatar.png # Path to your logo image (make sure it is in the assets folder)
+  web: true # Enable splash screen for Web (only works in some cases)

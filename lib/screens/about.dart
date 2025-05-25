@@ -44,7 +44,7 @@ class _AboutScreenState extends State<AboutScreen> {
           ],
         ),
         Text(
-          'Maxim Bulanovich ...',
+          'Maxim Bulanovich',
           style: TextStyle(
             fontSize: 55,
             color: Theme.of(context).colorScheme.primary,
