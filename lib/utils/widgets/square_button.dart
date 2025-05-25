@@ -55,11 +55,11 @@ class _SquareButtonState extends State<SquareButton> {
             ),
           ),
           child: Center(
-            child: Image.asset(
-              widget.imageUrl,
-              color: Theme.of(context).colorScheme.primary,
+            child: Image(
+              image: AssetImage(widget.imageUrl),
               width: 17,
               height: 17,
+              color: Colors.white,
             ),
           ),
         ),

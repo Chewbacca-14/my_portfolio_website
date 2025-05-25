@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/utils/widgets/asset_image_widget.dart';
 
 class ProjectScreen extends StatelessWidget {
   final String projectName;
@@ -64,21 +65,10 @@ class ProjectScreen extends StatelessWidget {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
-                          child: CachedNetworkImage(
-                            imageUrl: link, // Your network image URL
-                            fit: BoxFit.cover,
-                            placeholder: (context, url) => const Center(
-                              child: CircularProgressIndicator(),
-                            ),
-                            errorWidget: (context, url, error) => Center(
-                              child: Tooltip(
-                                message: 'Failed to load image $error',
-                                child: const Icon(
-                                  Icons.error,
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ),
+                          child: AssetImageWithPlaceholder(
+                            assetPath: link,
+                            width: 50,
+                            height: 50,
                           ),
                         ),
                       ),

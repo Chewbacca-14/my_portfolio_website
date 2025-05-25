@@ -209,8 +209,8 @@ class HomeScreen extends StatelessWidget {
                                   onPressed: () {
                                     html.window.open('https://www.linkedin.com/in/max-bulanovich-702642260', '_blank');
                                   },
-                                  icon: Image.asset(
-                                    'assets/icons/linkedin.png',
+                                  icon: Image(
+                                    image: const AssetImage('assets/icons/linkedin.png'),
                                     color: Theme.of(context).colorScheme.primary,
                                     width: 18,
                                     height: 18,
@@ -221,8 +221,8 @@ class HomeScreen extends StatelessWidget {
                                   onPressed: () {
                                     html.window.open('https://github.com/Chewbacca-14', '_blank');
                                   },
-                                  icon: Image.asset(
-                                    'assets/icons/github.png',
+                                  icon: Image(
+                                    image: const AssetImage('assets/icons/github.png'),
                                     color: Theme.of(context).colorScheme.primary,
                                     width: 18,
                                     height: 18,
@@ -233,8 +233,8 @@ class HomeScreen extends StatelessWidget {
                                   onPressed: () {
                                     html.window.open('https://t.me/chwbcc_max', '_blank');
                                   },
-                                  icon: Image.asset(
-                                    'assets/icons/telegram.png',
+                                  icon: Image(
+                                    image: const AssetImage('assets/icons/telegram.png'),
                                     color: Theme.of(context).colorScheme.primary,
                                     width: 18,
                                     height: 18,
@@ -245,8 +245,8 @@ class HomeScreen extends StatelessWidget {
                                   onPressed: () {
                                     html.window.open('https://www.instagram.com/chwbcc_max/', '_blank');
                                   },
-                                  icon: Image.asset(
-                                    'assets/icons/instagram.png',
+                                  icon: Image(
+                                    image: const AssetImage('assets/icons/instagram.png'),
                                     color: Theme.of(context).colorScheme.primary,
                                     width: 18,
                                     height: 18,
