@@ -125,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Text(
                               key: navProvider.projects,
-                              'Projects I can share',
+                              'Projects (no NDAs)',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
                                 fontSize: 32,
