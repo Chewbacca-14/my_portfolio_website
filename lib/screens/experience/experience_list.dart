@@ -10,7 +10,7 @@ List<Experience> _myExperience = [
   ),
   Experience(
     from: '05.2023',
-    to: '07.2024',
+    to: 'Actually',
     position: 'Flutter Developer',
     company: 'Freelance',
     description: 'Freelance Flutter developer creating cross-platform iOS, Android ans Web apps since 2023, delivering 10+ projects with a focus on innovation.',

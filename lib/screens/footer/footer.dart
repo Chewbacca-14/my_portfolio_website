@@ -6,7 +6,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      '© 2025 Maxim Bulanovich | IČO 21886261 | Modřínová 2011, 253 01 Hostivice | Fyzická osoba zapsaná v Živnostenském rejstříku v Městském úřadu Černošice od 5. 8. 2024',
+      '© ${DateTime.now().year} Maxim Bulanovich | IČO 21886261 | Na Výsluní 317, 252 65 Tursko | Fyzická osoba zapsaná v Živnostenském rejstříku v Městském úřadu Černošice od 5. 8. 2024',
       style: TextStyle(
         color: Theme.of(context).colorScheme.shadow,
         fontSize: 14,
