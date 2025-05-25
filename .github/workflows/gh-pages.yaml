@@ -3,7 +3,7 @@ name: Deploy Flutter Web to GitHub Pages
 on:
   push:
     branches:
-      - main # Change if your default branch is different
+      - main
 
 jobs:
   build:
@@ -27,9 +27,12 @@ jobs:
       - name: Build Flutter web
         run: flutter build web --release
 
-      - name: Add CNAME file (custom domain)
+      - name: Add CNAME file
         run: |
           cp web/CNAME build/web/CNAME
 
       - name: Deploy to GitHub Pages
         uses: bluefireteam/flutter-gh-pages@v9
+        with:
+          baseHref: /
+          webBuildDirectory: build/web
