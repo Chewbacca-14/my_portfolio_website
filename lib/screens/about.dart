@@ -1,5 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/about_me/about_me.dart';
+import 'package:my_portfolio_website/router.dart';
 import 'package:my_portfolio_website/utils/widgets/square_button.dart';
 import 'package:my_portfolio_website/utils/widgets/statistics/stats_value_container.dart';
 import 'dart:html' as html;
@@ -26,8 +29,8 @@ class _AboutScreenState extends State<AboutScreen> {
       children: [
         const CircleAvatar(
           radius: 80,
-          backgroundImage: NetworkImage(
-            'https://media.licdn.com/dms/image/v2/D4E03AQFxAjdx65J4NQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1720036174465?e=1749081600&v=beta&t=JaB6TH6n3Gz6_MnRAqWPL9OsSX7XQoeGClWKpA5FlQE',
+          backgroundImage: AssetImage(
+            'me.png',
           ),
         ),
         const SizedBox(height: 16),
@@ -78,6 +81,26 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ),
         const SizedBox(height: 16),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            foregroundColor: Colors.white,
+            side: const BorderSide(color: Colors.white, width: 1),
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+            textStyle: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
+            ),
+            elevation: 0,
+          ),
+          onPressed: () {
+            context.router.navigate(
+              const AboutMeRoute(),
+            );
+          },
+          child: const Text('About Me'),
+        ),
+        const SizedBox(height: 32),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           spacing: 10,

@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   provider: ^6.1.2
   google_fonts: ^6.2.1
   animated_text_kit: ^4.2.2
@@ -16,11 +18,13 @@ dependencies:
   cached_network_image: ^3.4.1
   intl: ^0.20.2
   flutter_native_splash: ^2.4.6
+  auto_route: ^10.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  build_runner: ^2.7.0
+  auto_route_generator: ^10.2.4
 
 flutter:
   uses-material-design: true
@@ -37,6 +41,9 @@ flutter:
     - assets/taxi_app/
     - assets/blog/
     - assets/avatar.png
+    - assets/me.png
+    - assets/me2.jpg
+    - lib/about_me/about.json
 
 flutter_native_splash:
   color: "#000000" # Set splash screen background color (black)
