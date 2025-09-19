@@ -71,7 +71,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                   const CircleAvatar(
                     radius: 80,
                     backgroundImage: AssetImage(
-                      'me2.jpg',
+                      'assets/me2.jpg',
                     ),
                   ),
                   const SizedBox(

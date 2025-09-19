@@ -6,7 +6,7 @@ List<Experience> _myExperience = [
     to: 'Actually',
     position: 'Flutter Developer',
     company: 'Adaptine, s.r.o.',
-    description: 'Developing Mobile and Web applications in a full-time role.',
+    description: 'Developing Mobile and Web applications',
   ),
   Experience(
     from: '05.2023',

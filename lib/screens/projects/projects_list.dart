@@ -3,6 +3,22 @@ part of 'projects.dart';
 List<Project> _myProjects = [
   Project(
     assets: null,
+    name: 'Gross Radar TMS',
+    badges: ['Commercial', 'Flutter', 'Dart', 'Web'],
+    url: 'https://grossradar.com/',
+    description:
+        'I developed a Transportation Management System (TMS) from scratch to work with the GrossRadar mobile app, enabling the creation and management of loads for app users. I built features to create organizations, invite users from the app, and manage trips efficiently. I implemented tools for creating, assigning, and tracking trips, as well as monitoring trip progress and history. The system integrates seamlessly with the mobile app, supporting real-time updates and smooth workflow for drivers and dispatchers.',
+  ),
+  Project(
+    assets: null,
+    name: 'Gross Radar Mobile',
+    badges: ['Commercial', 'Flutter', 'Dart', 'Google Maps', 'iOS', 'Android'],
+    url: 'https://grossradar.com/',
+    description:
+        'I continued development of the GrossRadar Mobile App, focusing on bug fixes and improving existing features. I worked with Google Maps to implement optimized routing methods that prevent mixing pickups and drop-offs for each load. I enhanced real-time load tracking, expense management, and driver payroll features while keeping the interface user-friendly. I ensured seamless performance and reliable data synchronization across iOS and Android platforms.',
+  ),
+  Project(
+    assets: null,
     name: 'THIS PORTFOLIO',
     badges: ['Portfolio', 'Flutter', 'Dart'],
     url: 'https://github.com/Chewbacca-14/my_portfolio_website',

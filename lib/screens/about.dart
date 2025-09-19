@@ -30,7 +30,7 @@ class _AboutScreenState extends State<AboutScreen> {
         const CircleAvatar(
           radius: 80,
           backgroundImage: AssetImage(
-            'me.png',
+            'assets/me.png',
           ),
         ),
         const SizedBox(height: 16),
@@ -159,7 +159,7 @@ class _AboutScreenState extends State<AboutScreen> {
         ),
         const SizedBox(height: 20),
         const StatsValueContainer(
-          2.5,
+          3,
           suffix: '+ years of experience',
         ),
         StatsValueContainer(
@@ -171,7 +171,7 @@ class _AboutScreenState extends State<AboutScreen> {
           suffix: '+ coups of tea',
         ),
         const StatsValueContainer(
-          15,
+          20,
           suffix: '+ commercial projects',
         ),
       ],
