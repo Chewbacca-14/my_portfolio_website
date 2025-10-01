@@ -39,10 +39,7 @@ class BlogTile extends StatelessWidget {
                       height: 32,
                       width: 32,
                       decoration: BoxDecoration(
-                        color: Theme.of(context)
-                            .colorScheme
-                            .shadow
-                            .withValues(alpha: 0.5),
+                        color: Theme.of(context).colorScheme.shadow.withValues(alpha: 0.5),
                         borderRadius: BorderRadius.circular(50),
                       ),
                       child: Icon(
@@ -69,8 +66,7 @@ class BlogTile extends StatelessWidget {
     );
   }
 
-  Widget _buildImage(BuildContext context,
-      {required double imageWidth, required double imageHeight}) {
+  Widget _buildImage(BuildContext context, {required double imageWidth, required double imageHeight}) {
     return Container(
       width: imageWidth,
       height: imageHeight,
@@ -82,10 +78,10 @@ class BlogTile extends StatelessWidget {
         ),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(12),
         child: CachedNetworkImage(
           imageUrl: blog.networkImageUrl,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
           placeholder: (context, url) => const Center(
             child: CircularProgressIndicator(),
           ),

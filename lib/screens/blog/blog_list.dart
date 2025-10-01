@@ -16,7 +16,7 @@ List<Blog> blog = [
     date: DateTime(2025, 3, 25),
   ),
   Blog(
-    networkImageUrl: 'https://miro.medium.com/v2/resize:fit:4800/format:webp/0*Ri86Y7NF1uOteRUw.png',
+    networkImageUrl: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Ri86Y7NF1uOteRUw',
     title: 'Master Flutter APIs in Minutes: Build Your First App Today',
     description: 'A simple tutorial to help you understand and use APIs in Flutter for building apps easily.',
     url: 'https://medium.com/@bulanovich5/master-flutter-apis-in-minutes-build-your-first-app-today-9ed14aa9ff39',
