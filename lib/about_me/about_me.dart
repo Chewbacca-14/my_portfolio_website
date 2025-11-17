@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:my_portfolio_website/i18n/strings.g.dart';
 import 'package:my_portfolio_website/router.dart';
 
 @RoutePage()
@@ -13,23 +14,10 @@ class AboutMeScreen extends StatefulWidget {
 }
 
 class _AboutMeScreenState extends State<AboutMeScreen> {
-  late final Future<String> _aboutFuture = _loadAboutText();
-
-  Future<String> _loadAboutText() async {
-    try {
-      final raw = await rootBundle.loadString('lib/about_me/about.json');
-      final data = json.decode(raw);
-      if (data is Map && data['about'] is String) {
-        return data['about'] as String;
-      }
-      return 'About information unavailable.';
-    } catch (e) {
-      return 'Failed to load about text.';
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
+    final t = Translations.of(context);
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.secondary,
       appBar: AppBar(
@@ -77,20 +65,9 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  FutureBuilder<String>(
-                    future: _aboutFuture,
-                    builder: (context, snapshot) {
-                      if (snapshot.connectionState == ConnectionState.waiting) {
-                        return Center(
-                          child: CircularProgressIndicator(
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                        );
-                      }
-                      final text = snapshot.data ?? 'About information unavailable.';
-                      return SingleChildScrollView(
+                  SingleChildScrollView(
                         child: Text(
-                          text,
+                          t.about_me,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -98,9 +75,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                             height: 1.4,
                           ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
                 ],
               ),
             ),

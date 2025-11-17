@@ -48,7 +48,6 @@ flutter:
     - assets/avatar.png
     - assets/me.png
     - assets/me2.jpg
-    - lib/about_me/about.json
 
 flutter_native_splash:
   color: "#000000" # Set splash screen background color (black)
