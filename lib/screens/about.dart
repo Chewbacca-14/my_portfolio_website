@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/about_me/about_me.dart';
+import 'package:my_portfolio_website/i18n/strings.g.dart';
 import 'package:my_portfolio_website/router.dart';
 import 'package:my_portfolio_website/utils/widgets/square_button.dart';
 import 'package:my_portfolio_website/utils/widgets/statistics/stats_value_container.dart';
@@ -24,6 +24,7 @@ class _AboutScreenState extends State<AboutScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final t = Translations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -47,7 +48,7 @@ class _AboutScreenState extends State<AboutScreen> {
           ],
         ),
         Text(
-          'Maxim Bulanovich',
+          t.about.name,
           style: TextStyle(
             fontSize: 55,
             color: Theme.of(context).colorScheme.primary,
@@ -55,7 +56,7 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ),
         Text(
-          'Flutter Developer',
+          t.about.role,
           style: TextStyle(
             fontSize: 18,
             color: Theme.of(context).colorScheme.tertiary,
@@ -64,7 +65,7 @@ class _AboutScreenState extends State<AboutScreen> {
         ),
         const SizedBox(height: 12),
         Text(
-          'Flutter Developer | Crafting Engaging and High-Performance Mobile Applications | Eager to Learn, Adapt, and Drive Innovation',
+          t.about.descr_first,
           style: TextStyle(
             fontSize: 15,
             color: Theme.of(context).colorScheme.shadow,
@@ -73,7 +74,7 @@ class _AboutScreenState extends State<AboutScreen> {
         ),
         const SizedBox(height: 12),
         Text(
-          'In addition to App Development, I collaborate with experienced specialists to create Websites, Telegram Bots, and Graphic Design to bring your ideas to life. Feel free to contact me for website creation, UI/UX design, Telegram bots, and more.',
+          t.about.descr_second,
           style: TextStyle(
             fontSize: 15,
             color: Theme.of(context).colorScheme.shadow,
@@ -98,7 +99,7 @@ class _AboutScreenState extends State<AboutScreen> {
               const AboutMeRoute(),
             );
           },
-          child: const Text('About Me'),
+          child: Text(t.about.about_me),
         ),
         const SizedBox(height: 32),
         Row(
@@ -106,7 +107,7 @@ class _AboutScreenState extends State<AboutScreen> {
           spacing: 10,
           children: [
             Text(
-              'Get in touch',
+              t.about.get_in_touch,
               style: TextStyle(
                 fontSize: 15,
                 color: Theme.of(context).colorScheme.primary,
@@ -120,27 +121,27 @@ class _AboutScreenState extends State<AboutScreen> {
             ),
             SquareButton(
               imageUrl: 'assets/icons/linkedin.png',
-              tooltip: 'Open My LinkedIn',
+              tooltip: t.home.open_linkedin,
               onTap: () {
                 html.window.open('https://www.linkedin.com/in/max-bulanovich-702642260', '_blank');
               },
             ),
             SquareButton(
               imageUrl: 'assets/icons/github.png',
-              tooltip: 'Open My GitHub',
+              tooltip: t.home.open_github,
               onTap: () {
                 html.window.open('https://github.com/Chewbacca-14', '_blank');
               },
             ),
             SquareButton(
               imageUrl: 'assets/icons/telegram.png',
-              tooltip: 'Message me on Telegram',
+              tooltip: t.home.message_telegram,
               onTap: () {
                 html.window.open('https://t.me/chwbcc_max', '_blank');
               },
             ),
             SquareButton(
-              tooltip: 'Follow me on Instagram',
+              tooltip: t.home.follow_instagram,
               imageUrl: 'assets/icons/instagram.png',
               onTap: () {
                 html.window.open('https://www.instagram.com/chwbcc_max/', '_blank');
@@ -150,7 +151,7 @@ class _AboutScreenState extends State<AboutScreen> {
         ),
         const SizedBox(height: 50),
         Text(
-          'Statistics',
+          t.about.statistics,
           style: TextStyle(
             color: Theme.of(context).colorScheme.primary,
             fontSize: 32,
@@ -158,21 +159,21 @@ class _AboutScreenState extends State<AboutScreen> {
           ),
         ),
         const SizedBox(height: 20),
-        const StatsValueContainer(
+        StatsValueContainer(
           3,
-          suffix: '+ years of experience',
+          suffix: t.about.years_experience,
         ),
         StatsValueContainer(
           ((1700) + (daysDifference * 5.85)).roundToDouble(),
-          suffix: ' + hours of coding',
+          suffix: t.about.hours_coding,
         ),
         StatsValueContainer(
           ((700) + (daysDifference * 1)).roundToDouble(),
-          suffix: '+ coups of tea',
+          suffix: t.about.cups,
         ),
-        const StatsValueContainer(
+        StatsValueContainer(
           20,
-          suffix: '+ commercial projects',
+          suffix: t.about.projects,
         ),
       ],
     );

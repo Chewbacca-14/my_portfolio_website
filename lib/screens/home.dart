@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_website/i18n/strings.g.dart';
 import 'package:my_portfolio_website/providers/nav_provider.dart';
 import 'package:my_portfolio_website/screens/about.dart';
 import 'package:my_portfolio_website/screens/blog/blog.dart';
@@ -18,6 +19,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = Translations.of(context);
     final navProvider = Provider.of<NavProvider>(context);
 
     final screenWidth = MediaQuery.of(context).size.width;
@@ -53,28 +55,52 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       MenuTab(
-                        'Experience',
+                        t.home.experience,
                         onTap: () {
                           navProvider.scrollTo(NavItems.experience);
                         },
                       ),
                       MenuTab(
-                        'Projects',
+                        t.home.projects,
                         onTap: () {
                           navProvider.scrollTo(NavItems.projects);
                         },
                       ),
                       MenuTab(
-                        'Skills',
+                        t.home.skills,
                         onTap: () {
                           navProvider.scrollTo(NavItems.skills);
                         },
                       ),
                       MenuTab(
-                        'Blog',
+                        t.home.blog,
                         onTap: () {
                           navProvider.scrollTo(NavItems.blog);
                         },
+                      ),
+                      PopupMenuButton<AppLocale>(
+                        icon: Icon(
+                          Icons.language,
+                          color: Theme.of(context).colorScheme.shadow,
+                        ),
+                        tooltip: t.home.change_language,
+                        onSelected: (AppLocale locale) {
+                          LocaleSettings.setLocale(locale);
+                        },
+                        itemBuilder: (BuildContext context) => <PopupMenuEntry<AppLocale>>[
+                          const PopupMenuItem<AppLocale>(
+                            value: AppLocale.en,
+                            child: Text('English'),
+                          ),
+                          const PopupMenuItem<AppLocale>(
+                            value: AppLocale.ru,
+                            child: Text('Русский'),
+                          ),
+                          const PopupMenuItem<AppLocale>(
+                            value: AppLocale.cs,
+                            child: Text('Čeština'),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -109,7 +135,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Text(
                               key: navProvider.experience,
-                              'Experience',
+                              t.home.experience,
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
                                 fontSize: 32,
@@ -127,7 +153,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Text(
                               key: navProvider.projects,
-                              'Projects (no NDAs)',
+                              '${t.home.projects} (no NDAs)',
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
                                 fontSize: 32,
@@ -145,7 +171,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Text(
                               key: navProvider.skills,
-                              'Skills',
+                              t.home.skills,
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
                                 fontSize: 32,
@@ -165,7 +191,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             Text(
                               key: navProvider.blog,
-                              'Blog',
+                              t.home.blog,
                               style: TextStyle(
                                 color: Theme.of(context).colorScheme.primary,
                                 fontSize: 32,
@@ -188,7 +214,7 @@ class HomeScreen extends StatelessWidget {
                               crossAxisAlignment: WrapCrossAlignment.center,
                               children: [
                                 Text(
-                                  'Made with Flutter ❤️ \nby Maxim Bulanovich | Flutter Developer',
+                                  t.home.footer_text,
                                   style: TextStyle(
                                     color: Theme.of(context).colorScheme.shadow,
                                     fontSize: 18,
@@ -207,7 +233,7 @@ class HomeScreen extends StatelessWidget {
                               alignment: WrapAlignment.center,
                               children: [
                                 IconButton(
-                                  tooltip: 'Open My LinkedIn',
+                                  tooltip: t.home.open_linkedin,
                                   onPressed: () {
                                     html.window.open('https://www.linkedin.com/in/max-bulanovich-702642260', '_blank');
                                   },
@@ -219,7 +245,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
                                 IconButton(
-                                  tooltip: 'Open My GitHub',
+                                  tooltip: t.home.open_github,
                                   onPressed: () {
                                     html.window.open('https://github.com/Chewbacca-14', '_blank');
                                   },
@@ -231,7 +257,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
                                 IconButton(
-                                  tooltip: 'Message me on Telegram',
+                                  tooltip: t.home.message_telegram,
                                   onPressed: () {
                                     html.window.open('https://t.me/chwbcc_max', '_blank');
                                   },
@@ -243,7 +269,7 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                 ),
                                 IconButton(
-                                  tooltip: 'Follow me on Instagram',
+                                  tooltip: t.home.follow_instagram,
                                   onPressed: () {
                                     html.window.open('https://www.instagram.com/chwbcc_max/', '_blank');
                                   },

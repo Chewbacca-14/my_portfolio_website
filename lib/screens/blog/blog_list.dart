@@ -22,4 +22,12 @@ List<Blog> blog = [
     url: 'https://medium.com/@bulanovich5/master-flutter-apis-in-minutes-build-your-first-app-today-9ed14aa9ff39',
     date: DateTime(2025, 10, 1),
   ),
+  Blog(
+    networkImageUrl: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*cr_XfzaaeoC80DXrTcIC4Q.jpeg',
+    title: 'Highlights from FlutterCon 2025',
+    description: 'What I learned & how I’m applying it',
+    url: 'https://medium.com/@bulanovich5/highlights-from-fluttercon-2025-what-i-learned-how-im-applying-it-0928cfa0928c',
+    date: DateTime(2025, 11, 16),
+  ),
+  
 ];

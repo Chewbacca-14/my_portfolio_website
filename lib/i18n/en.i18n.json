@@ -1,0 +1,27 @@
+{
+  "home": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "blog": "Blog",
+    "change_language": "Change Language",
+    "footer_text": "Made with Flutter ❤️ \nby Maxim Bulanovich | Flutter Developer",
+    "open_linkedin": "Open LinkedIn",
+    "open_github": "Open GitHub",
+    "message_telegram": "Message on Telegram",
+    "follow_instagram": "Follow on Instagram"
+  },
+  "about": {
+    "name": "Max Bulanovich",
+    "role": "Flutter Developer",
+    "descr_first": "Flutter Developer | Crafting Engaging and High-Performance Mobile Applications | Eager to Learn, Adapt, and Drive Innovation",
+    "descr_second": "In addition to App Development, I collaborate with experienced specialists to create Websites, Telegram Bots, and Graphic Design to bring your ideas to life. Feel free to contact me for website creation, UI/UX design, Telegram bots, and more.",
+    "about_me": "About Me",
+    "get_in_touch": "Get in Touch",
+    "statistics" : "Statistics",
+    "years_experience": "+ years of experience",
+    "hours_coding": "+ hours of coding",
+    "cups": "+ coups of tea",
+    "projects": "+ commercial projects"
+  }
+}

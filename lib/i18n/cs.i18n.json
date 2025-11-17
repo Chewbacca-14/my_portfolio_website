@@ -1,0 +1,27 @@
+{
+  "home": {
+    "experience": "Zkušenosti",
+    "projects": "Projekty",
+    "skills": "Dovednosti",
+    "blog": "Blog",
+    "change_language": "Změnit jazyk",
+    "footer_text": "Vytvořeno ve Flutteru ❤️ \n Maxim Bulanovich | Flutter vývojář",
+    "open_linkedin": "Otevřít LinkedIn",
+    "open_github": "Otevřít GitHub",
+    "message_telegram": "Poslat zprávu na Telegram",
+    "follow_instagram": "Sledovat na Instagramu"
+  },
+  "about": {
+    "name": "Max Bulanovich",
+    "role": "Flutter Vývojář",
+    "descr_first": "Flutter Vývojář | Vytvářím poutavé a výkonné mobilní aplikace | Chuť učit se, přizpůsobovat se a přinášet inovace",
+    "descr_second": "Kromě vývoje aplikací spolupracuji se zkušenými specialisty na tvorbě webových stránek, Telegram botů a grafického designu, abych přivedl vaše nápady k životu. Neváhejte mě kontaktovat pro tvorbu webů, UI/UX design, Telegram boty a další.",
+    "about_me": "O mně",
+    "get_in_touch": "Kontaktujte mě",
+    "statistics": "Statistiky",
+    "years_experience": "+ let zkušeností",
+    "hours_coding": "+ hodin kódování",
+    "cups": "+ šálků čaje",
+    "projects": "+ komerčních projektů"
+  }
+}
