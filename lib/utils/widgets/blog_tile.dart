@@ -52,6 +52,7 @@ class BlogTile extends StatelessWidget {
                 ],
               )
             : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 20,
                 children: [
                   _buildImage(

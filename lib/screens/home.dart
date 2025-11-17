@@ -14,8 +14,59 @@ import 'dart:html' as html;
 import 'package:provider/provider.dart';
 
 @RoutePage()
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  Widget languageSelector() {
+    return PopupMenuButton<AppLocale>(
+      color: Theme.of(context).colorScheme.shadow,
+      icon: Icon(
+        Icons.language,
+        color: Theme.of(context).colorScheme.primary,
+      ),
+      tooltip: t.home.change_language,
+      onSelected: (AppLocale locale) {
+        LocaleSettings.setLocale(locale);
+      },
+      itemBuilder: (BuildContext context) => <PopupMenuEntry<AppLocale>>[
+        PopupMenuItem<AppLocale>(
+          value: AppLocale.en,
+          child: Text(
+            'English',
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: 14,
+            ),
+          ),
+        ),
+        PopupMenuItem<AppLocale>(
+          value: AppLocale.ru,
+          child: Text(
+            'Русский',
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: 14,
+            ),
+          ),
+        ),
+        PopupMenuItem<AppLocale>(
+          value: AppLocale.cs,
+          child: Text(
+            'Čeština',
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
+              fontSize: 14,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,33 +129,12 @@ class HomeScreen extends StatelessWidget {
                           navProvider.scrollTo(NavItems.blog);
                         },
                       ),
-                      PopupMenuButton<AppLocale>(
-                        icon: Icon(
-                          Icons.language,
-                          color: Theme.of(context).colorScheme.shadow,
-                        ),
-                        tooltip: t.home.change_language,
-                        onSelected: (AppLocale locale) {
-                          LocaleSettings.setLocale(locale);
-                        },
-                        itemBuilder: (BuildContext context) => <PopupMenuEntry<AppLocale>>[
-                          const PopupMenuItem<AppLocale>(
-                            value: AppLocale.en,
-                            child: Text('English'),
-                          ),
-                          const PopupMenuItem<AppLocale>(
-                            value: AppLocale.ru,
-                            child: Text('Русский'),
-                          ),
-                          const PopupMenuItem<AppLocale>(
-                            value: AppLocale.cs,
-                            child: Text('Čeština'),
-                          ),
-                        ],
-                      ),
+                      languageSelector(),
                     ],
                   ),
-                ],
+                ] else ...[
+                  languageSelector(),
+                ]
               ],
             ),
           ),

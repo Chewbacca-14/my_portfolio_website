@@ -39,6 +39,11 @@ class TranslationsCs implements Translations {
 	// Translations
 	@override late final _TranslationsHomeCs home = _TranslationsHomeCs._(_root);
 	@override late final _TranslationsAboutCs about = _TranslationsAboutCs._(_root);
+	@override String get actually => 'Teď';
+	@override String get freelance => 'Freelance';
+	@override String get adaptine_descr => 'Vývoj mobilních a webových aplikací';
+	@override String get freelance_descr => 'Tvorba multiplatformních aplikací pro iOS, Android a Web se zaměřením na inovace.';
+	@override late final _TranslationsProjectsCs projects = _TranslationsProjectsCs._(_root);
 }
 
 // Path: home
@@ -80,6 +85,159 @@ class _TranslationsAboutCs implements TranslationsAboutEn {
 	@override String get projects => '+ komerčních projektů';
 }
 
+// Path: projects
+class _TranslationsProjectsCs implements TranslationsProjectsEn {
+	_TranslationsProjectsCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override late final _TranslationsProjectsGrossRadarTmsCs gross_radar_tms = _TranslationsProjectsGrossRadarTmsCs._(_root);
+	@override late final _TranslationsProjectsGrossRadarMobileCs gross_radar_mobile = _TranslationsProjectsGrossRadarMobileCs._(_root);
+	@override late final _TranslationsProjectsPortfolioCs portfolio = _TranslationsProjectsPortfolioCs._(_root);
+	@override late final _TranslationsProjectsMaruCs maru = _TranslationsProjectsMaruCs._(_root);
+	@override late final _TranslationsProjectsPapiBurgersCs papi_burgers = _TranslationsProjectsPapiBurgersCs._(_root);
+	@override late final _TranslationsProjectsNullendVpnCs nullend_vpn = _TranslationsProjectsNullendVpnCs._(_root);
+	@override late final _TranslationsProjectsNullendBrowserCs nullend_browser = _TranslationsProjectsNullendBrowserCs._(_root);
+	@override late final _TranslationsProjectsEasyPgpCs easy_pgp = _TranslationsProjectsEasyPgpCs._(_root);
+	@override late final _TranslationsProjectsTaxiAppCs taxi_app = _TranslationsProjectsTaxiAppCs._(_root);
+	@override late final _TranslationsProjectsHorizonVillageCs horizon_village = _TranslationsProjectsHorizonVillageCs._(_root);
+	@override late final _TranslationsProjectsKamiCs kami = _TranslationsProjectsKamiCs._(_root);
+	@override late final _TranslationsProjectsBudgetManagerCs budget_manager = _TranslationsProjectsBudgetManagerCs._(_root);
+}
+
+// Path: projects.gross_radar_tms
+class _TranslationsProjectsGrossRadarTmsCs implements TranslationsProjectsGrossRadarTmsEn {
+	_TranslationsProjectsGrossRadarTmsCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Gross Radar TMS';
+	@override String get description => 'Vyvinul jsem systém správy dopravy (TMS) od začátku pro práci s mobilní aplikací GrossRadar, který umožňuje vytváření a správu nákladů pro uživatele aplikace. Vytvořil jsem funkce pro vytváření organizací, pozvání uživatelů z aplikace a efektivní správu cest. Implementoval jsem nástroje pro vytváření, přiřazování a sledování cest, stejně jako monitorování průběhu a historie cest. Systém se hladce integruje s mobilní aplikací a podporuje aktualizace v reálném čase a plynulý pracovní postup pro řidiče a dispečery.';
+}
+
+// Path: projects.gross_radar_mobile
+class _TranslationsProjectsGrossRadarMobileCs implements TranslationsProjectsGrossRadarMobileEn {
+	_TranslationsProjectsGrossRadarMobileCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Gross Radar Mobile';
+	@override String get description => 'Pokračoval jsem ve vývoji mobilní aplikace GrossRadar se zaměřením na opravy chyb a vylepšení stávajících funkcí. Pracoval jsem s Google Maps na implementaci optimalizovaných metod směrování, které zabraňují míchání míst nakládky a vykládky pro každý náklad. Vylepšil jsem sledování nákladu v reálném čase, správu výdajů a funkce výplat řidičů při zachování uživatelsky přívětivého rozhraní. Zajistil jsem bezproblémový výkon a spolehlivou synchronizaci dat napříč platformami iOS a Android.';
+}
+
+// Path: projects.portfolio
+class _TranslationsProjectsPortfolioCs implements TranslationsProjectsPortfolioEn {
+	_TranslationsProjectsPortfolioCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'TOTO PORTFOLIO';
+	@override String get description => 'Vytvořil jsem toto portfolio, abych předvedl své dovednosti a projekty. Je to webová aplikace Flutter.';
+}
+
+// Path: projects.maru
+class _TranslationsProjectsMaruCs implements TranslationsProjectsMaruEn {
+	_TranslationsProjectsMaruCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Maru';
+	@override String get description => 'Maru byl vyvinut pro vytvoření bezpečného a decentralizovaného způsobu přístupu k internetu, který je odolný vůči cenzuře a zajišťuje vysokou úroveň anonymity. Síť se skládá z mnoha uzlů vytvořených uživateli po celém světě, což ji činí decentralizovanou a odolnou vůči útokům.';
+}
+
+// Path: projects.papi_burgers
+class _TranslationsProjectsPapiBurgersCs implements TranslationsProjectsPapiBurgersEn {
+	_TranslationsProjectsPapiBurgersCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Papi Burgers';
+	@override String get description => 'Tato aplikace funguje jako doručovací platforma pro síť restaurací a nabízí uživatelům intuitivní způsob objednávání jídla. Na začátku si uživatelé vyberou preferovanou restauraci, přidají požadované položky do košíku a hladce přejdou k pokladně s integrovanými platebními možnostmi pro bezproblémový proces transakce. Kromě toho výkonná administrátorská aplikace poskytuje plnou kontrolu nad provozem platformy. Administrátoři mohou snadno spravovat restaurace, upravovat nebo přidávat menu, aktualizovat umístění restaurací na mapě, zveřejňovat pracovní příležitosti a provádět různé další administrativní úkoly pro zajištění hladké správy platformy.';
+}
+
+// Path: projects.nullend_vpn
+class _TranslationsProjectsNullendVpnCs implements TranslationsProjectsNullendVpnEn {
+	_TranslationsProjectsNullendVpnCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'NullEnd VPN';
+	@override String get description => 'NULL END® je aplikace, která kombinuje technologie VPN a Tor pro poskytnutí robustní digitální bezpečnosti. VPN šifruje váš provoz a skrývá vaši IP adresu, zatímco Tor umožňuje anonymní procházení internetu prostřednictvím zabezpečené sítě serverů. Společně zajišťují ochranu proti sledování a únikům dat, díky čemuž je NULL END® novým standardem v internetové bezpečnosti. Aplikace zahrnuje dva VPN protokoly a flexibilní nastavení Tor pro obcházení bloků, šifrování veškerého provozu zařízení pro spolehlivou ochranu. Jako vývojář aplikace jsem implementoval některé malé opravy pro zlepšení nativních komponent a zvýšení jejího výkonu.';
+}
+
+// Path: projects.nullend_browser
+class _TranslationsProjectsNullendBrowserCs implements TranslationsProjectsNullendBrowserEn {
+	_TranslationsProjectsNullendBrowserCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'NullEnd Browser';
+	@override String get description => 'Aplikace je bezpečný prohlížeč s integrovaným VPN (NullEnd VPN) nabízející standardní režim a režim inkognito. V režimu inkognito se vymazává historie prohlížení, soubory cookie a mezipaměť, WebRTC je zakázán a stahování vyžaduje potvrzení, aby se zabránilo náhodným souborům nebo virům. Podporuje procházení ve více kartách, záložky s úpravami, historii vyhledávání a sledování stahování. Dostupné v ruštině a angličtině.';
+}
+
+// Path: projects.easy_pgp
+class _TranslationsProjectsEasyPgpCs implements TranslationsProjectsEasyPgpEn {
+	_TranslationsProjectsEasyPgpCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'EasyPGP';
+	@override String get description => 'Aplikace dešifruje PGP šifrované zprávy pomocí hesla a soukromého klíče PGP. Dešifrujte zprávy vložením šifrovaného textu nebo naskenováním QR kódu. Pokud nemáte klíče PGP, vygenerujte je v aplikaci s délkou 2048, 4096 nebo 8192 bitů. Vygenerované klíče jsou bezpečně uloženy ve vašem telefonu. Můžete také nahrát existující páry klíčů. Přístup může být zabezpečen heslem, otiskem prstu nebo Face ID.';
+}
+
+// Path: projects.taxi_app
+class _TranslationsProjectsTaxiAppCs implements TranslationsProjectsTaxiAppEn {
+	_TranslationsProjectsTaxiAppCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Taxi App';
+	@override String get description => 'Skutečný název aplikace je udržován v tajnosti na žádost klienta. Podílel jsem se na vývoji celého uživatelského rozhraní (rozložení), integraci a optimalizaci Google Maps.';
+}
+
+// Path: projects.horizon_village
+class _TranslationsProjectsHorizonVillageCs implements TranslationsProjectsHorizonVillageEn {
+	_TranslationsProjectsHorizonVillageCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Horizon Village';
+	@override String get description => 'Tato aplikace je určena pro vzdálené regiony v Uzbekistánu. Obyvatelé ji mohou používat ke koupi nebo prodeji předmětů na tržišti, přijímání zpráv od místních úřadů, prohlížení reklamních příspěvků, hledání spolujízdy do města nebo nabídnutí jízdy ostatním.';
+}
+
+// Path: projects.kami
+class _TranslationsProjectsKamiCs implements TranslationsProjectsKamiEn {
+	_TranslationsProjectsKamiCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Kami';
+	@override String get description => 'Aplikace KAMI, která bude brzy přejmenována na APAR, byla vytvořena pro výrobce ekologických elektrických nákladních vozidel pro zjednodušení nákladní dopravy. Uživatelé mohou objednat dopravu výběrem až 3 míst doručení na mapě, zobrazit všechny objednávky a získat přístup k podrobným informacím o trase a objednávce přímo v aplikaci.';
+}
+
+// Path: projects.budget_manager
+class _TranslationsProjectsBudgetManagerCs implements TranslationsProjectsBudgetManagerEn {
+	_TranslationsProjectsBudgetManagerCs._(this._root);
+
+	final TranslationsCs _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Budget Manager';
+	@override String get description => 'Moje první aplikace Flutter! Pomáhá sledovat vaše výdaje a příjmy a je dostupná ve čtyřech jazycích. Navrhl jsem každý aspekt aplikace kromě grafické reprezentace filtrování výdajů/příjmů podle měsíce a funkcionality ukládání místní měny.';
+}
+
 /// The flat map containing all translations for locale <cs>.
 /// Only for edge cases! For simple maps, use the map function of this library.
 ///
@@ -113,6 +271,34 @@ extension on TranslationsCs {
 			'about.hours_coding' => '+ hodin kódování',
 			'about.cups' => '+ šálků čaje',
 			'about.projects' => '+ komerčních projektů',
+			'actually' => 'Teď',
+			'freelance' => 'Freelance',
+			'adaptine_descr' => 'Vývoj mobilních a webových aplikací',
+			'freelance_descr' => 'Tvorba multiplatformních aplikací pro iOS, Android a Web se zaměřením na inovace.',
+			'projects.gross_radar_tms.name' => 'Gross Radar TMS',
+			'projects.gross_radar_tms.description' => 'Vyvinul jsem systém správy dopravy (TMS) od začátku pro práci s mobilní aplikací GrossRadar, který umožňuje vytváření a správu nákladů pro uživatele aplikace. Vytvořil jsem funkce pro vytváření organizací, pozvání uživatelů z aplikace a efektivní správu cest. Implementoval jsem nástroje pro vytváření, přiřazování a sledování cest, stejně jako monitorování průběhu a historie cest. Systém se hladce integruje s mobilní aplikací a podporuje aktualizace v reálném čase a plynulý pracovní postup pro řidiče a dispečery.',
+			'projects.gross_radar_mobile.name' => 'Gross Radar Mobile',
+			'projects.gross_radar_mobile.description' => 'Pokračoval jsem ve vývoji mobilní aplikace GrossRadar se zaměřením na opravy chyb a vylepšení stávajících funkcí. Pracoval jsem s Google Maps na implementaci optimalizovaných metod směrování, které zabraňují míchání míst nakládky a vykládky pro každý náklad. Vylepšil jsem sledování nákladu v reálném čase, správu výdajů a funkce výplat řidičů při zachování uživatelsky přívětivého rozhraní. Zajistil jsem bezproblémový výkon a spolehlivou synchronizaci dat napříč platformami iOS a Android.',
+			'projects.portfolio.name' => 'TOTO PORTFOLIO',
+			'projects.portfolio.description' => 'Vytvořil jsem toto portfolio, abych předvedl své dovednosti a projekty. Je to webová aplikace Flutter.',
+			'projects.maru.name' => 'Maru',
+			'projects.maru.description' => 'Maru byl vyvinut pro vytvoření bezpečného a decentralizovaného způsobu přístupu k internetu, který je odolný vůči cenzuře a zajišťuje vysokou úroveň anonymity. Síť se skládá z mnoha uzlů vytvořených uživateli po celém světě, což ji činí decentralizovanou a odolnou vůči útokům.',
+			'projects.papi_burgers.name' => 'Papi Burgers',
+			'projects.papi_burgers.description' => 'Tato aplikace funguje jako doručovací platforma pro síť restaurací a nabízí uživatelům intuitivní způsob objednávání jídla. Na začátku si uživatelé vyberou preferovanou restauraci, přidají požadované položky do košíku a hladce přejdou k pokladně s integrovanými platebními možnostmi pro bezproblémový proces transakce. Kromě toho výkonná administrátorská aplikace poskytuje plnou kontrolu nad provozem platformy. Administrátoři mohou snadno spravovat restaurace, upravovat nebo přidávat menu, aktualizovat umístění restaurací na mapě, zveřejňovat pracovní příležitosti a provádět různé další administrativní úkoly pro zajištění hladké správy platformy.',
+			'projects.nullend_vpn.name' => 'NullEnd VPN',
+			'projects.nullend_vpn.description' => 'NULL END® je aplikace, která kombinuje technologie VPN a Tor pro poskytnutí robustní digitální bezpečnosti. VPN šifruje váš provoz a skrývá vaši IP adresu, zatímco Tor umožňuje anonymní procházení internetu prostřednictvím zabezpečené sítě serverů. Společně zajišťují ochranu proti sledování a únikům dat, díky čemuž je NULL END® novým standardem v internetové bezpečnosti. Aplikace zahrnuje dva VPN protokoly a flexibilní nastavení Tor pro obcházení bloků, šifrování veškerého provozu zařízení pro spolehlivou ochranu. Jako vývojář aplikace jsem implementoval některé malé opravy pro zlepšení nativních komponent a zvýšení jejího výkonu.',
+			'projects.nullend_browser.name' => 'NullEnd Browser',
+			'projects.nullend_browser.description' => 'Aplikace je bezpečný prohlížeč s integrovaným VPN (NullEnd VPN) nabízející standardní režim a režim inkognito. V režimu inkognito se vymazává historie prohlížení, soubory cookie a mezipaměť, WebRTC je zakázán a stahování vyžaduje potvrzení, aby se zabránilo náhodným souborům nebo virům. Podporuje procházení ve více kartách, záložky s úpravami, historii vyhledávání a sledování stahování. Dostupné v ruštině a angličtině.',
+			'projects.easy_pgp.name' => 'EasyPGP',
+			'projects.easy_pgp.description' => 'Aplikace dešifruje PGP šifrované zprávy pomocí hesla a soukromého klíče PGP. Dešifrujte zprávy vložením šifrovaného textu nebo naskenováním QR kódu. Pokud nemáte klíče PGP, vygenerujte je v aplikaci s délkou 2048, 4096 nebo 8192 bitů. Vygenerované klíče jsou bezpečně uloženy ve vašem telefonu. Můžete také nahrát existující páry klíčů. Přístup může být zabezpečen heslem, otiskem prstu nebo Face ID.',
+			'projects.taxi_app.name' => 'Taxi App',
+			'projects.taxi_app.description' => 'Skutečný název aplikace je udržován v tajnosti na žádost klienta. Podílel jsem se na vývoji celého uživatelského rozhraní (rozložení), integraci a optimalizaci Google Maps.',
+			'projects.horizon_village.name' => 'Horizon Village',
+			'projects.horizon_village.description' => 'Tato aplikace je určena pro vzdálené regiony v Uzbekistánu. Obyvatelé ji mohou používat ke koupi nebo prodeji předmětů na tržišti, přijímání zpráv od místních úřadů, prohlížení reklamních příspěvků, hledání spolujízdy do města nebo nabídnutí jízdy ostatním.',
+			'projects.kami.name' => 'Kami',
+			'projects.kami.description' => 'Aplikace KAMI, která bude brzy přejmenována na APAR, byla vytvořena pro výrobce ekologických elektrických nákladních vozidel pro zjednodušení nákladní dopravy. Uživatelé mohou objednat dopravu výběrem až 3 míst doručení na mapě, zobrazit všechny objednávky a získat přístup k podrobným informacím o trase a objednávce přímo v aplikaci.',
+			'projects.budget_manager.name' => 'Budget Manager',
+			'projects.budget_manager.description' => 'Moje první aplikace Flutter! Pomáhá sledovat vaše výdaje a příjmy a je dostupná ve čtyřech jazycích. Navrhl jsem každý aspekt aplikace kromě grafické reprezentace filtrování výdajů/příjmů podle měsíce a funkcionality ukládání místní měny.',
 			_ => null,
 		};
 	}

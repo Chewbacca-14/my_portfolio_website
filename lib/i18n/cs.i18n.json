@@ -23,5 +23,59 @@
     "hours_coding": "+ hodin kódování",
     "cups": "+ šálků čaje",
     "projects": "+ komerčních projektů"
+  },
+  "actually": "Teď",
+  "freelance": "Freelance",
+  "adaptine_descr": "Vývoj mobilních a webových aplikací",
+  "freelance_descr": "Tvorba multiplatformních aplikací pro iOS, Android a Web se zaměřením na inovace.",
+  "projects": {
+    "gross_radar_tms": {
+      "name": "Gross Radar TMS",
+      "description": "Vyvinul jsem systém správy dopravy (TMS) od začátku pro práci s mobilní aplikací GrossRadar, který umožňuje vytváření a správu nákladů pro uživatele aplikace. Vytvořil jsem funkce pro vytváření organizací, pozvání uživatelů z aplikace a efektivní správu cest. Implementoval jsem nástroje pro vytváření, přiřazování a sledování cest, stejně jako monitorování průběhu a historie cest. Systém se hladce integruje s mobilní aplikací a podporuje aktualizace v reálném čase a plynulý pracovní postup pro řidiče a dispečery."
+    },
+    "gross_radar_mobile": {
+      "name": "Gross Radar Mobile",
+      "description": "Pokračoval jsem ve vývoji mobilní aplikace GrossRadar se zaměřením na opravy chyb a vylepšení stávajících funkcí. Pracoval jsem s Google Maps na implementaci optimalizovaných metod směrování, které zabraňují míchání míst nakládky a vykládky pro každý náklad. Vylepšil jsem sledování nákladu v reálném čase, správu výdajů a funkce výplat řidičů při zachování uživatelsky přívětivého rozhraní. Zajistil jsem bezproblémový výkon a spolehlivou synchronizaci dat napříč platformami iOS a Android."
+    },
+    "portfolio": {
+      "name": "TOTO PORTFOLIO",
+      "description": "Vytvořil jsem toto portfolio, abych předvedl své dovednosti a projekty. Je to webová aplikace Flutter."
+    },
+    "maru": {
+      "name": "Maru",
+      "description": "Maru byl vyvinut pro vytvoření bezpečného a decentralizovaného způsobu přístupu k internetu, který je odolný vůči cenzuře a zajišťuje vysokou úroveň anonymity. Síť se skládá z mnoha uzlů vytvořených uživateli po celém světě, což ji činí decentralizovanou a odolnou vůči útokům."
+    },
+    "papi_burgers": {
+      "name": "Papi Burgers",
+      "description": "Tato aplikace funguje jako doručovací platforma pro síť restaurací a nabízí uživatelům intuitivní způsob objednávání jídla. Na začátku si uživatelé vyberou preferovanou restauraci, přidají požadované položky do košíku a hladce přejdou k pokladně s integrovanými platebními možnostmi pro bezproblémový proces transakce. Kromě toho výkonná administrátorská aplikace poskytuje plnou kontrolu nad provozem platformy. Administrátoři mohou snadno spravovat restaurace, upravovat nebo přidávat menu, aktualizovat umístění restaurací na mapě, zveřejňovat pracovní příležitosti a provádět různé další administrativní úkoly pro zajištění hladké správy platformy."
+    },
+    "nullend_vpn": {
+      "name": "NullEnd VPN",
+      "description": "NULL END® je aplikace, která kombinuje technologie VPN a Tor pro poskytnutí robustní digitální bezpečnosti. VPN šifruje váš provoz a skrývá vaši IP adresu, zatímco Tor umožňuje anonymní procházení internetu prostřednictvím zabezpečené sítě serverů. Společně zajišťují ochranu proti sledování a únikům dat, díky čemuž je NULL END® novým standardem v internetové bezpečnosti. Aplikace zahrnuje dva VPN protokoly a flexibilní nastavení Tor pro obcházení bloků, šifrování veškerého provozu zařízení pro spolehlivou ochranu. Jako vývojář aplikace jsem implementoval některé malé opravy pro zlepšení nativních komponent a zvýšení jejího výkonu."
+    },
+    "nullend_browser": {
+      "name": "NullEnd Browser",
+      "description": "Aplikace je bezpečný prohlížeč s integrovaným VPN (NullEnd VPN) nabízející standardní režim a režim inkognito. V režimu inkognito se vymazává historie prohlížení, soubory cookie a mezipaměť, WebRTC je zakázán a stahování vyžaduje potvrzení, aby se zabránilo náhodným souborům nebo virům. Podporuje procházení ve více kartách, záložky s úpravami, historii vyhledávání a sledování stahování. Dostupné v ruštině a angličtině."
+    },
+    "easy_pgp": {
+      "name": "EasyPGP",
+      "description": "Aplikace dešifruje PGP šifrované zprávy pomocí hesla a soukromého klíče PGP. Dešifrujte zprávy vložením šifrovaného textu nebo naskenováním QR kódu. Pokud nemáte klíče PGP, vygenerujte je v aplikaci s délkou 2048, 4096 nebo 8192 bitů. Vygenerované klíče jsou bezpečně uloženy ve vašem telefonu. Můžete také nahrát existující páry klíčů. Přístup může být zabezpečen heslem, otiskem prstu nebo Face ID."
+    },
+    "taxi_app": {
+      "name": "Taxi App",
+      "description": "Skutečný název aplikace je udržován v tajnosti na žádost klienta. Podílel jsem se na vývoji celého uživatelského rozhraní (rozložení), integraci a optimalizaci Google Maps."
+    },
+    "horizon_village": {
+      "name": "Horizon Village",
+      "description": "Tato aplikace je určena pro vzdálené regiony v Uzbekistánu. Obyvatelé ji mohou používat ke koupi nebo prodeji předmětů na tržišti, přijímání zpráv od místních úřadů, prohlížení reklamních příspěvků, hledání spolujízdy do města nebo nabídnutí jízdy ostatním."
+    },
+    "kami": {
+      "name": "Kami",
+      "description": "Aplikace KAMI, která bude brzy přejmenována na APAR, byla vytvořena pro výrobce ekologických elektrických nákladních vozidel pro zjednodušení nákladní dopravy. Uživatelé mohou objednat dopravu výběrem až 3 míst doručení na mapě, zobrazit všechny objednávky a získat přístup k podrobným informacím o trase a objednávce přímo v aplikaci."
+    },
+    "budget_manager": {
+      "name": "Budget Manager",
+      "description": "Moje první aplikace Flutter! Pomáhá sledovat vaše výdaje a příjmy a je dostupná ve čtyřech jazycích. Navrhl jsem každý aspekt aplikace kromě grafické reprezentace filtrování výdajů/příjmů podle měsíce a funkcionality ukládání místní měny."
+    }
   }
 }
