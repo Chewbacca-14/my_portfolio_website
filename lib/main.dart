@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
+import 'package:my_portfolio_website/i18n/strings.g.dart';
 import 'package:my_portfolio_website/providers/nav_provider.dart';
 import 'package:my_portfolio_website/providers/theme_provider.dart';
 import 'package:my_portfolio_website/router.dart';
@@ -12,6 +14,7 @@ final appRouter = AppRouter();
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  LocaleSettings.useDeviceLocale();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   usePathUrlStrategy();
   runApp(
@@ -20,7 +23,9 @@ void main() {
         ChangeNotifierProvider(create: (context) => NavProvider()),
         ChangeNotifierProvider(create: (context) => ThemeNotifier()),
       ],
-      child: const MainApp(),
+      child: TranslationProvider(
+        child: const MainApp(),
+      ),
     ),
   );
 }
@@ -33,6 +38,9 @@ class MainApp extends StatelessWidget {
     FlutterNativeSplash.remove();
     return Consumer<ThemeNotifier>(
       builder: (context, notifier, child) => MaterialApp.router(
+        locale: TranslationProvider.of(context).flutterLocale,
+        supportedLocales: AppLocaleUtils.supportedLocales,
+        localizationsDelegates: GlobalMaterialLocalizations.delegates,
         theme: darkTheme,
         title: 'Maksim Bulanovich',
         darkTheme: darkTheme,

@@ -373,7 +373,6 @@ class SectionHeader extends StatelessWidget {
                   ],
                 ),
               ),
-              
             if (trailing != null) ...[
               SizedBox(height: isCompact ? 14 : 0, width: isCompact ? 0 : 24),
               trailing!,
