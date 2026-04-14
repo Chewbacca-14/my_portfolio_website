@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/i18n/strings.g.dart';
 import 'package:my_portfolio_website/models/project.dart';
 import 'package:my_portfolio_website/screens/project_screen.dart';
 import 'package:my_portfolio_website/utils/project_assets.dart';
@@ -16,7 +15,7 @@ class ProjectsScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       spacing: 16,
-      children: _myProjects(context)
+      children: _myProjects
           .map(
             (project) => ProjectCard(
               project: project,
