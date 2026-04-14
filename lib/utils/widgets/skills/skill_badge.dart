@@ -10,53 +10,31 @@ class SkillBadge extends StatefulWidget {
 }
 
 class _SkillBadgeState extends State<SkillBadge> {
-  double scale = 1.0;
-
-  bool get isHover => scale == 1.2;
-
-  void onEnter() {
-    setState(() {
-      scale = 1.2;
-    });
-  }
-
-  void onExit() {
-    setState(() {
-      scale = 1.0;
-    });
-  }
+  bool isHover = false;
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return MouseRegion(
-      onEnter: (event) {
-        onEnter();
-      },
-      onExit: (event) {
-        onExit();
-      },
+      onEnter: (_) => setState(() => isHover = true),
+      onExit: (_) => setState(() => isHover = false),
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary,
-          borderRadius: BorderRadius.circular(6),
+          color: isHover ? theme.colorScheme.tertiary.withValues(alpha: 0.12) : theme.colorScheme.secondary.withValues(alpha: 0.68),
+          borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: Theme.of(context).colorScheme.shadow,
-            width: 0.6,
+            color: isHover ? theme.colorScheme.tertiary : theme.colorScheme.outline,
           ),
         ),
-        padding: EdgeInsets.symmetric(
-          horizontal: (8 * scale),
-          vertical: (5 * scale),
-        ),
-        child: Center(
-          child: Text(
-            widget.skill,
-            style: TextStyle(
-              color: isHover ? Theme.of(context).colorScheme.tertiary : Theme.of(context).colorScheme.shadow,
-              fontWeight: FontWeight.w600,
-              fontSize: 15,
-            ),
+        child: Text(
+          widget.skill,
+          style: theme.textTheme.bodyMedium?.copyWith(
+            color: isHover ? theme.colorScheme.primary : theme.colorScheme.shadow,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),

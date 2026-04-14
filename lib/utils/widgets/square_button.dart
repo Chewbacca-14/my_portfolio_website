@@ -19,47 +19,46 @@ class SquareButton extends StatefulWidget {
 class _SquareButtonState extends State<SquareButton> {
   bool isHover = false;
 
-  void onEnter() {
-    setState(() {
-      isHover = true;
-    });
-  }
-
-  void onExit() {
-    setState(
-      () {
-        isHover = false;
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: widget.onTap,
-      onHover: (isHovering) {
-        isHovering ? onEnter() : onExit();
-      },
-      child: Tooltip(
-        message: widget.tooltip,
+    final theme = Theme.of(context);
+
+    return Tooltip(
+      message: widget.tooltip,
+      child: InkWell(
+        onTap: widget.onTap,
+        borderRadius: BorderRadius.circular(18),
+        onHover: (value) {
+          setState(() {
+            isHover = value;
+          });
+        },
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          height: 38,
-          width: 35.50,
+          duration: const Duration(milliseconds: 180),
+          curve: Curves.easeOut,
+          height: 48,
+          width: 48,
           decoration: BoxDecoration(
-            color: isHover ? Theme.of(context).colorScheme.shadow.withValues(alpha: 0.3) : Theme.of(context).colorScheme.secondary,
-            borderRadius: BorderRadius.circular(6),
+            color: isHover ? theme.colorScheme.tertiary.withValues(alpha: 0.12) : theme.colorScheme.surface.withValues(alpha: 0.72),
+            borderRadius: BorderRadius.circular(18),
             border: Border.all(
-              color: Theme.of(context).colorScheme.primary,
-              width: 0.7,
+              color: isHover ? theme.colorScheme.tertiary : theme.colorScheme.outline,
             ),
+            boxShadow: [
+              if (isHover)
+                BoxShadow(
+                  color: theme.colorScheme.tertiary.withValues(alpha: 0.14),
+                  blurRadius: 18,
+                  offset: const Offset(0, 8),
+                ),
+            ],
           ),
           child: Center(
-            child: Image(
-              image: AssetImage(widget.imageUrl),
-              width: 17,
-              height: 17,
-              color: Colors.white,
+            child: Image.asset(
+              widget.imageUrl,
+              width: 18,
+              height: 18,
+              color: theme.colorScheme.primary,
             ),
           ),
         ),

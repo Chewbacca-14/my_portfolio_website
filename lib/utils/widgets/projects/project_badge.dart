@@ -7,25 +7,22 @@ class ProjectBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Container(
-      height: 22,
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.secondary,
-        borderRadius: BorderRadius.circular(6),
+        color: theme.colorScheme.tertiary.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(999),
         border: Border.all(
-          color: Theme.of(context).colorScheme.shadow,
-          width: 0.6,
+          color: theme.colorScheme.tertiary.withValues(alpha: 0.18),
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.shadow,
-            fontWeight: FontWeight.w600,
-            fontSize: 14,
-          ),
+      child: Text(
+        text,
+        style: theme.textTheme.labelLarge?.copyWith(
+          color: theme.colorScheme.tertiary,
+          fontWeight: FontWeight.w800,
         ),
       ),
     );

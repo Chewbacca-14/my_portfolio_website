@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -23,21 +24,23 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
         return data['about'] as String;
       }
       return 'About information unavailable.';
-    } catch (e) {
+    } catch (_) {
       return 'Failed to load about text.';
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.secondary,
+      backgroundColor: theme.colorScheme.secondary,
       appBar: AppBar(
-        centerTitle: true,
+        toolbarHeight: 86,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Theme.of(context).colorScheme.primary,
+            color: theme.colorScheme.primary,
           ),
           onPressed: () {
             final canPop = context.router.canPop();
@@ -50,53 +53,63 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
         ),
         title: Text(
           'About Me',
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.shadow,
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w800,
           ),
         ),
-        backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
         child: Align(
           alignment: Alignment.topCenter,
-          child: SizedBox(
-            width: 900,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 980),
+            child: Container(
+              padding: const EdgeInsets.all(28),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surface.withValues(alpha: 0.86),
+                borderRadius: BorderRadius.circular(34),
+                border: Border.all(color: theme.colorScheme.outline),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CircleAvatar(
-                    radius: 80,
-                    backgroundImage: AssetImage(
-                      'assets/me2.jpg',
+                  Text(
+                    'A bit more about how I work',
+                    style: theme.textTheme.headlineMedium?.copyWith(
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: -1.2,
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                  const SizedBox(height: 14),
+                  Text(
+                    'I care about performance, clear UX, maintainable architecture, and communication that keeps projects moving.',
+                    style: theme.textTheme.bodyLarge?.copyWith(
+                      color: theme.colorScheme.shadow,
+                      height: 1.7,
+                    ),
                   ),
+                  const SizedBox(height: 24),
                   FutureBuilder<String>(
                     future: _aboutFuture,
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return Center(
-                          child: CircularProgressIndicator(
-                            color: Theme.of(context).colorScheme.primary,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 32),
+                            child: CircularProgressIndicator(
+                              color: theme.colorScheme.tertiary,
+                            ),
                           ),
                         );
                       }
+
                       final text = snapshot.data ?? 'About information unavailable.';
-                      return SingleChildScrollView(
-                        child: Text(
-                          text,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            height: 1.4,
-                          ),
+                      return Text(
+                        text,
+                        style: theme.textTheme.bodyLarge?.copyWith(
+                          color: theme.colorScheme.primary.withValues(alpha: 0.92),
+                          height: 1.85,
                         ),
                       );
                     },

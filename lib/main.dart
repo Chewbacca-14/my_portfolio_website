@@ -6,7 +6,6 @@ import 'package:my_portfolio_website/providers/nav_provider.dart';
 import 'package:my_portfolio_website/providers/theme_provider.dart';
 import 'package:my_portfolio_website/router.dart';
 import 'package:my_portfolio_website/theme/dark_theme.dart';
-import 'package:my_portfolio_website/theme/light_theme.dart';
 import 'package:provider/provider.dart';
 
 final appRouter = AppRouter();
@@ -34,7 +33,7 @@ class MainApp extends StatelessWidget {
     FlutterNativeSplash.remove();
     return Consumer<ThemeNotifier>(
       builder: (context, notifier, child) => MaterialApp.router(
-        theme: lightTheme,
+        theme: darkTheme,
         title: 'Maksim Bulanovich',
         darkTheme: darkTheme,
         themeMode: notifier.themeMode,

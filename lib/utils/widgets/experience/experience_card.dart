@@ -11,67 +11,95 @@ class ExperienceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 120,
-            child: Wrap(
-              spacing: 8,
-              children: [
-                Text(
-                  '${experience.from} -',
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.shadow,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                Text(
-                  experience.to,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.shadow,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ],
+    final theme = Theme.of(context);
+
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.secondary.withValues(alpha: 0.65),
+        borderRadius: BorderRadius.circular(26),
+        border: Border.all(
+          color: theme.colorScheme.outline,
+        ),
+      ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final isCompact = constraints.maxWidth < 760;
+
+          Widget dateBadge = Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: isCompact ? 12 : 14,
+              vertical: isCompact ? 9 : 10,
             ),
-          ),
-          Expanded(
-            child: Column(
+            decoration: BoxDecoration(
+              color: theme.colorScheme.surface.withValues(alpha: 0.72),
+              borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: theme.colorScheme.outline),
+            ),
+            child: Text(
+              '${experience.from} - ${experience.to}',
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: theme.colorScheme.shadow,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          );
+
+          Widget content = Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                experience.company,
+                maxLines: isCompact ? 2 : null,
+                overflow: isCompact ? TextOverflow.ellipsis : null,
+                style: (isCompact ? theme.textTheme.headlineSmall : theme.textTheme.headlineSmall)?.copyWith(
+                  fontSize: isCompact ? 22 : null,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: -0.8,
+                  height: 1.1,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                experience.position,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  fontSize: isCompact ? 16 : null,
+                  color: theme.colorScheme.tertiary,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                experience.description,
+                style: theme.textTheme.bodyLarge?.copyWith(
+                  fontSize: isCompact ? 15 : null,
+                  color: theme.colorScheme.shadow,
+                  height: 1.65,
+                ),
+              ),
+            ],
+          );
+
+          if (isCompact) {
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  experience.company,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontSize: 21,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  experience.position,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.85),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                Text(
-                  experience.description,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.shadow,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+                dateBadge,
+                const SizedBox(height: 16),
+                content,
               ],
-            ),
-          )
-        ],
+            );
+          }
+
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              dateBadge,
+              const SizedBox(width: 24),
+              Expanded(child: content),
+            ],
+          );
+        },
       ),
     );
   }

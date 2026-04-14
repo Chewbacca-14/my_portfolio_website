@@ -5,12 +5,13 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Text(
-      '© ${DateTime.now().year} Maxim Bulanovich | IČO 21886261 | Na Výsluní 317, 252 65 Tursko | Fyzická osoba zapsaná v Živnostenském rejstříku v Městském úřadu Černošice od 5. 8. 2024',
-      style: TextStyle(
-        color: Theme.of(context).colorScheme.shadow,
-        fontSize: 14,
-        fontWeight: FontWeight.w500,
+      '© ${DateTime.now().year} Maxim Bulanovich | ICO 21886261 | Na Vysluni 317, 252 65 Tursko | Registered as a sole trader in the Czech Trade Register since 5 Aug 2024',
+      style: theme.textTheme.bodySmall?.copyWith(
+        color: theme.colorScheme.shadow,
+        height: 1.7,
+        fontWeight: FontWeight.w600,
       ),
       textAlign: TextAlign.center,
     );

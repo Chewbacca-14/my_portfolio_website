@@ -9,6 +9,7 @@ class ExperienceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       spacing: 20,
       children: _myExperience.map((experience) => ExperienceCard(experience: experience)).toList(),
     );

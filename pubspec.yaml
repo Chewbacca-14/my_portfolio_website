@@ -41,6 +41,8 @@ flutter:
     - assets/taxi_app/
     - assets/blog/
     - assets/avatar.png
+    - assets/newav.jpg
+    - assets/me.jpg
     - assets/me.png
     - assets/me2.jpg
     - lib/about_me/about.json

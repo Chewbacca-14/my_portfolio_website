@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/utils/widgets/asset_image_widget.dart';
 
@@ -14,57 +13,56 @@ class ProjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.secondary,
+      backgroundColor: theme.colorScheme.secondary,
       appBar: AppBar(
+        toolbarHeight: 86,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Theme.of(context).colorScheme.primary,
+            color: theme.colorScheme.primary,
           ),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
         title: Text(
           projectName,
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.primary,
-            fontSize: 22,
-            fontWeight: FontWeight.w700,
+          style: theme.textTheme.titleLarge?.copyWith(
+            fontWeight: FontWeight.w800,
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: 50,
-            horizontal: 20,
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Wrap(
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1200),
+            child: Container(
+              padding: const EdgeInsets.all(26),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surface.withValues(alpha: 0.84),
+                borderRadius: BorderRadius.circular(34),
+                border: Border.all(color: theme.colorScheme.outline),
+              ),
+              child: SingleChildScrollView(
+                child: Wrap(
                   spacing: 20,
                   runSpacing: 20,
+                  alignment: WrapAlignment.center,
                   children: [
                     ...images!.map(
                       (link) => Container(
                         width: 280,
                         height: 600,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          border: Border.all(
-                            color: Theme.of(context).colorScheme.primary,
-                            width: 0.5,
-                          ),
+                          borderRadius: BorderRadius.circular(28),
+                          border: Border.all(color: theme.colorScheme.outline),
                         ),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(28),
                           child: AssetImageWithPlaceholder(
                             assetPath: link,
                             width: 50,
@@ -75,7 +73,7 @@ class ProjectScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
           ),
         ),
