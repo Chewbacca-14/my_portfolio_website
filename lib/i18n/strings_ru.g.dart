@@ -11,7 +11,7 @@ import 'package:slang/generated.dart';
 import 'strings.g.dart';
 
 // Path: <root>
-class TranslationsRu implements Translations {
+class TranslationsRu with BaseTranslations<AppLocale, Translations> implements Translations {
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
 	TranslationsRu({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, Translations>? meta})
@@ -246,10 +246,6 @@ class _TranslationsProjectsBudgetManagerRu implements TranslationsProjectsBudget
 /// so the map is split into smaller functions (512 entries each).
 extension on TranslationsRu {
 	dynamic _flatMapFunction(String path) {
-		return _flatMapFunction$0(path);
-	}
-
-	dynamic _flatMapFunction$0(String path) {
 		return switch (path) {
 			'home.experience' => 'Опыт',
 			'home.projects' => 'Проекты',
@@ -305,4 +301,3 @@ extension on TranslationsRu {
 		};
 	}
 }
-
